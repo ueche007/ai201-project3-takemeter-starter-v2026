@@ -51,63 +51,43 @@ whether you hit them:
 
 ---
 
-## 1.
+## 1. Overall accuracy is at least 0.65 on the held-out test split, on every one of the three seeds.
 
-<!-- Your criterion. It must name a number. -->
+Measured by `accuracy` in `results_three_seeds_before.json`, one value per seed (42, 7, 2024). All three must be ≥ 0.65.
 
-
-
-**Why this target:**
-
-
+**Why this target:** With four labels, guessing at random scores about 0.25. Always guessing the biggest label should score about 0.35, because the dataset caps any one label at 40% (criterion 3). A tool that sorts r/running posts has to be right about two times in three before it saves a reader anything, which puts 0.65 well clear of both floors. It also isn't a stretch: three of the labels have strong surface markers (question marks and "should I" for `question`, paces and times for `firsthand`, short "lol / this!" replies for `chatter`). The hard part is `firsthand` vs `claim`.
 
 ---
 
-## 2.
+## 2. Every label has an F1 of at least 0.45 on the held-out test split, on every one of the three seeds.
 
-<!-- Your criterion. -->
+Measured by `per_label[<label>].f1` for `question`, `firsthand`, `claim` and `chatter`, all twelve values (4 labels × 3 seeds) ≥ 0.45.
 
-
-
-**Why this target:**
-
-
+**Why this target:** A good average can hide one label the model never learns, and the likeliest candidate is `chatter`. It is the thinnest label in the pool, so it will have only about 6–8 posts in a ~33-post test split. On 6 posts a single extra miss moves F1 by roughly 0.15, so the per-label floor sits deliberately below criterion 1's 0.65. 0.45 still means the model finds most of a label's posts without flooding it with others. It is not a free pass for `claim`, which loses posts to `firsthand` under the hardest rule.
 
 ---
 
-## 3.
+## 3. In `labels.csv`, no label is more than 40% of the rows, and no label is fewer than 12% of them.
 
-<!-- Your criterion. -->
+Measured by counting the `label` column of `labels.csv` (the notebook's check cell prints the shares).
 
-
-
-**Why this target:**
-
-
+**Why this target:** The brief's 70% cap would allow a 140-row `firsthand` file and a 15-row `chatter` file, and the model would learn to guess `firsthand`. On r/running, the raw pool leans heavily toward stories and advice in the discussion threads. A 40% ceiling forces collection to keep `question` and `chatter` in. The 12% floor means at least about 26 of ~220 rows, which still leaves the smallest label about 4 posts in the test split under the 70/15/15 split. Below that, criterion 2 can't be measured meaningfully.
 
 ---
 
-## 4.
+## 4. My labels agree with the staff labels on at least 21 of the 30 staff posts (70%), as reported by `agreement.py` in unit 6.
 
-<!-- Your criterion. -->
+Measured by the agreement rate in `agreement_results.json`.
 
-
-
-**Why this target:**
-
-
+**Why this target:** This is the only check on whether I apply a written rule consistently, rather than in whatever way I happened to label my own 200. The staff set uses its own three labels (`analysis` / `hot_take` / `reaction`). It has an ordered "does the fact carry the argument" rule, the same kind of rule as my `firsthand` vs `claim` boundary, so a low rate there would be evidence about my own labels too. Staff say a rate in the 70s is normal and several posts were chosen to be ambiguous, so 70% is the bottom of "normal", not a stretch.
 
 ---
 
-## 5.
+## 5. On every seed, the model's most-confident third of test predictions is at least 0.15 more accurate than its least-confident third.
 
-<!-- Your criterion. -->
+Measured by `confidence.accuracy_most_confident_third − confidence.accuracy_least_confident_third` for each of the three seeds; all three gaps ≥ 0.15.
 
-
-
-**Why this target:**
-
-
+**Why this target:** For TakeMeter to be usable, a reader has to be able to trust its sure calls and double-check its unsure ones. That only works if confidence means something. With about 33 test posts, each third is about 11 posts, so a 0.15 gap is about 2 more correct answers in the confident third. That's small enough to be reachable, and large enough that it isn't noise from one lucky post. I expect `firsthand`-vs-`claim` posts to fill the unsure third, and that's exactly what this criterion should show.
 
 ---
 
