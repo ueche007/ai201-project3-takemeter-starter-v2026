@@ -44,8 +44,7 @@ community, by what they give a reader. A post either asks the community
 something (`question`), reports the writer's own running with a concrete
 detail (`firsthand`), tells readers what to do or what's true about running
 without that firsthand evidence (`claim`), or says nothing about running at all
-(`chatter`). It's a fine-tuned DistilBERT model trained on hand-checked
-labels for real r/running posts. The useful split for a reader is `firsthand`
+(`chatter`). It fine-tunes DistilBERT on 220 labelled r/running posts. The useful split for a reader is `firsthand`
 vs `claim`: two posts can give the same advice, and only one shows where it came from.
 
 ---
@@ -120,9 +119,10 @@ thanks, congratulations, jokes, or talk about Reddit and the subreddit.
 
 **Which two labels:** `firsthand` vs `claim`. On r/running the most common
 substantial comment is a personal story that turns into advice. This one, from
-a thread on recovering after a marathon, sits right on the line:
+a thread asking why marathon plans rarely include running 26 miles before
+race day, sits right on the line:
 
-> I ran my first maraton at 41. Trained 3-4 days per week (40-60 km) and it took my 1 week to recover. You will feel horrible after but the next day, get out and walk 5-10 km and so on (swim or bike is likely fine as well). The important thing is to get the blow flowing to help healing the body.
+> I ran my first maraton at 41. Trained 3-4 days per week (40-60 km) and it took my 1 week to recover. You will feel horrible after but the next day, get out and walk 5-10 km and so on (swim or bike is likely fine as well). The important thing is to get the blow flowing to help healing the body. […]
 
 Half of it is the writer's own marathon and half is instructions to the reader.
 
@@ -207,21 +207,30 @@ submission, the first line is its title.
 
 **How I labelled them:** `labels.csv` has 220 rows, built by
 `tools/assemble_labels.py`:
-- **20 cold rows** (`note` starts `cold`): drawn at random from the pool, kept
-  apart from everything below, and labelled by hand from the definitions alone,
-  before any pre-labels were seen.
+- **20 cold rows** (`note` starts `cold`): 19 drawn at random from the pool
+  (seed 20, in a scratch script that wasn't kept; the ids are in
+  `notes/cold_ids.txt`) plus 1 replacement drawn by `tools/assemble_labels.py`,
+  after one original turned out to be a moderator thread. Kept apart from
+  everything below and labelled by hand from the definitions alone, before
+  any pre-labels were seen. One of them, the women's running shoes post, was
+  also item 22 of the Milestone 1 reading sample, so it wasn't unseen.
+  <!-- TODO: true only once you've labelled the 20 cold rows yourself
+  (`python tools/review.py --cold`). -->
 - **200 pre-labelled rows**: Claude pre-labelled 280 random pool items (100
   submissions, 180 comments, with short comments over-sampled so `chatter`
-  wasn't starved). The 112 uncertain ones were re-checked after the rules were
-  clarified (Label Taxonomy, rules 1–3). 16 were still low-confidence, nearly
-  all because their label depended on a parent comment or thread the text
-  doesn't contain; those were left out rather than guessed. From the rest, 200
+  wasn't starved). 5 of the submissions turned out to be moderator boilerplate
+  threads and were dropped, leaving 275 (95 submissions, 180 comments). The 112 uncertain ones were re-checked after the rules were
+  clarified (Label Taxonomy, rules 1–3). 16 were still low-confidence: a few
+  because their label depended on a parent comment or thread the text doesn't
+  contain, the rest because the rules still didn't settle them (a plural
+  occasion, an unclear spectator, sarcasm). Those were left out rather than
+  guessed. From the rest, 200
   were sampled at random within each label to balance the counts. I then read
   and corrected every one with `tools/review.py`. <!-- TODO: true only once the review
   is finished; check `python tools/check_labels.py` says 0 left. -->
 
-Every row's `note` ends with its Reddit id, which links to its permalink in
-`data/candidate_posts.csv`. Both pre-label passes and their reasons are in
+Every row's `note` ends with its Reddit id (`t1_…` comment, `t3_…` post).
+The pool file `data/candidate_posts.csv` maps each id to its permalink. Both pre-label passes and their reasons are in
 `notes/prelabels.csv`.
 
 **Counts per label:** <!-- TODO: re-run `python tools/check_labels.py` after
@@ -235,7 +244,7 @@ table below is the 200 pre-labelled rows before review. -->
 | `claim` | 53 | 26.5% |
 | `chatter` | 45 | 22.5% |
 | *cold rows, not yet labelled* | 20 | — |
-| **Total** | 220 | 100% |
+| **Total** | 220 | shares above are of the 200 |
 
 **Three hard cases**
 
@@ -249,9 +258,11 @@ table below is the 200 pre-labelled rows before review. -->
 >
 > *I chose, because:* `question`. Rule 1 comes before rule 2, and a closing
 > request for help with the writer's own situation counts as asking. A closing
-> "Anyone else…?" that only invites stories would not. It was the closest call
-> in the set, because the post reads like a report, but the order of the rules
+> "Anyone else…?" that only invites stories would not. It's a close call
+> because the post reads like a report, but the order of the rules
 > is there to stop the reading-like-a-report judgement deciding it.
+> <!-- TODO: all three hard-case labels are Claude's re-checked pre-labels.
+> Confirm or change each during review, and rewrite the reasons in your own words. -->
 
 **2.**
 > *The post:* "Energy was off the charts this year. It was unseasonably warm,
@@ -354,11 +365,13 @@ my data (commit `fb8efed`).
   - asking for an opinion as a question;
   - imperative titles;
   - "yesterday" as a date.
-- *What I changed:* I wrote a ruling for each into rules 1–3 and had the 112
-  low- and medium-confidence pre-labels re-checked against them.
+- *What I changed:* Claude drafted a ruling for each and I adopted them into
+  rules 1–3. Then the 112 low- and medium-confidence pre-labels were re-checked
+  against them.
 
 **Pre-labelling disclosure:** The 20 rows marked `cold` were labelled by hand,
-with no AI help and before seeing any pre-labels. Every other row was
+with no AI help and before seeing any pre-labels. <!-- TODO: true only after
+`python tools/review.py --cold`. --> Every other row was
 pre-labelled by Claude and then read and corrected by me. Each such row's
 `note` column says which. <!-- TODO before submitting: confirm the review
 happened, and give the number of labels you changed in review. -->

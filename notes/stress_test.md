@@ -38,7 +38,8 @@ confuses `firsthand` and `claim` in unit 6, look here first.
 
 ## Round 2: what pre-labelling 280 real posts exposed
 
-Four Claude sessions pre-labelled 70 posts each under the rules above, then
+Four Claude sessions pre-labelled 70 posts each (280; 5 moderator threads were
+later dropped, leaving 275) under the rules above, then
 reported their hardest calls. They split on four things:
 
 | Question | How the sessions split | Ruling now in the README |
@@ -53,4 +54,4 @@ running, and jokes or quoted remarks with no sincere point are `chatter`. The
 moderators' scheduled threads ("Super Moronic Monday", "Miscellaneous Monday
 Chit Chat") are boilerplate and were removed from the pool.
 
-The 115 low- and medium-confidence pre-labels were then re-checked against these rulings.
+The 112 low- and medium-confidence pre-labels were then re-checked against these rulings.

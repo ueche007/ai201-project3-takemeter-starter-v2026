@@ -55,7 +55,7 @@ whether you hit them:
 
 Measured by `accuracy` in `results_three_seeds_before.json`, one value per seed (42, 7, 2024). All three must be ≥ 0.65.
 
-**Why this target:** With four labels, guessing at random scores about 0.25. Always guessing the biggest label should score about 0.35, because the dataset caps any one label at 40% (criterion 3). A tool that sorts r/running posts has to be right about two times in three before it saves a reader anything, which puts 0.65 well clear of both floors. It also isn't a stretch: three of the labels have strong surface markers (question marks and "should I" for `question`, paces and times for `firsthand`, short "lol / this!" replies for `chatter`). The hard part is `firsthand` vs `claim`.
+**Why this target:** With four labels, guessing at random scores about 0.25. Always guessing the biggest label scores about 0.27, because the pre-labelled rows are balanced (`claim` is 26.5%). Even at criterion 3's 40% cap, it couldn't score more than 0.40. A tool that sorts r/running posts has to be right about two times in three before it saves a reader anything, which puts 0.65 well clear of both floors. It also isn't a stretch: three of the labels have strong surface markers (question marks and "should I" for `question`, paces and times for `firsthand`, short "lol / this!" replies for `chatter`). The hard part is `firsthand` vs `claim`.
 
 ---
 
@@ -69,7 +69,7 @@ Measured by `per_label[<label>].f1` for `question`, `firsthand`, `claim` and `ch
 
 ## 3. In `labels.csv`, no label is more than 40% of the rows, and no label is fewer than 12% of them.
 
-Measured by counting the `label` column of `labels.csv` (the notebook's check cell prints the shares).
+Measured by counting the `label` column of `labels.csv` (`python tools/check_labels.py` prints the shares; the notebook's check cell prints the counts).
 
 **Why this target:** The brief's 70% cap would allow a 140-row `firsthand` file and a 15-row `chatter` file, and the model would learn to guess `firsthand`. On r/running, the raw pool leans heavily toward stories and advice in the discussion threads. A 40% ceiling forces collection to keep `question` and `chatter` in. The 12% floor means at least about 26 of ~220 rows, which still leaves the smallest label about 4 posts in the test split under the 70/15/15 split. Below that, criterion 2 can't be measured meaningfully.
 
