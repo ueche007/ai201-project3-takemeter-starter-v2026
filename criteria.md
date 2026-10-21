@@ -81,6 +81,8 @@ Measured by the agreement rate in `agreement_results.json`.
 
 **Why this target:** This is the only check on whether I apply a written rule consistently, rather than in whatever way I happened to label my own 200. The staff set uses its own three labels (`analysis` / `hot_take` / `reaction`). It has an ordered "does the fact carry the argument" rule, the same kind of rule as my `firsthand` vs `claim` boundary, so a low rate there would be evidence about my own labels too. Staff say a rate in the 70s is normal and several posts were chosen to be ambiguous, so 70% is the bottom of "normal", not a stretch.
 
+> **Note added after labelling (not a change to the criterion):** in the end all of `labels.csv` was labelled by Claude, not by me (see the README's pre-labelling disclosure). So this check measures how consistently *I* apply the staff's written rules. It isn't direct evidence about the consistency of `labels.csv`.
+
 ---
 
 ## 5. On every seed, the model's most-confident third of test predictions is at least 0.15 more accurate than its least-confident third.

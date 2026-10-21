@@ -44,7 +44,7 @@ community, by what they give a reader. A post either asks the community
 something (`question`), reports the writer's own running with a concrete
 detail (`firsthand`), tells readers what to do or what's true about running
 without that firsthand evidence (`claim`), or says nothing about running at all
-(`chatter`). It fine-tunes DistilBERT on 220 labelled r/running posts. The useful split for a reader is `firsthand`
+(`chatter`). It fine-tunes DistilBERT on a 220-post labelled set (154 used for training). The useful split for a reader is `firsthand`
 vs `claim`: two posts can give the same advice, and only one shows where it came from.
 
 ---
@@ -126,7 +126,7 @@ race day, sits right on the line:
 
 Half of it is the writer's own marathon and half is instructions to the reader.
 
-**The decision rule I used every time:** If the post contains a firsthand
+**The decision rule applied every time:** If the post contains a firsthand
 account of the writer's **own** running with at least one specific detail of
 a particular occasion (a time or pace, the distance of a particular run, a
 date or month, a named race or place, or a body part that got hurt), it is
@@ -255,6 +255,10 @@ No label is above 70%, and all four are inside criterion 3's 12–40% band.
 
 **Three hard cases**
 
+All three calls below were made by Claude's pre-label passes under the
+written rules, and the blind second pass agreed with each. "Chosen" means
+chosen by that process, not by me by hand.
+
 **1.**
 > *The post:* "Running with my daughter". A report: a 5 km run yesterday,
 > with a seven-year-old on a scooter. It ends: "I'm hoping that we can keep
@@ -263,13 +267,11 @@ No label is above 70%, and all four are inside criterion 3's 12–40% band.
 > *Could have been:* `firsthand` (a complete report with a date and a
 > distance) or `question` (it asks for tips).
 >
-> *I chose, because:* `question`. Rule 1 comes before rule 2, and a closing
+> *Chosen, because:* `question`. Rule 1 comes before rule 2, and a closing
 > request for help with the writer's own situation counts as asking. A closing
 > "Anyone else…?" that only invites stories would not. It's a close call
 > because the post reads like a report, but the order of the rules
 > is there to stop the reading-like-a-report judgement deciding it.
-> *(All three labels were set by Claude's pre-label passes, and the blind second
-> pass agreed on each.)*
 
 **2.**
 > *The post:* "Energy was off the charts this year. It was unseasonably warm,
@@ -279,7 +281,7 @@ No label is above 70%, and all four are inside criterion 3's 12–40% band.
 > *Could have been:* `firsthand` (a particular race, this year, described from
 > experience) or `claim`.
 >
-> *I chose, because:* `claim`. Nothing in the text says the writer ran, and
+> *Chosen, because:* `claim`. Nothing in the text says the writer ran, and
 > "great spectator weather" suggests they watched. Watching someone else's race
 > isn't the writer's own running, so there's no firsthand account, just a
 > statement about the race.
@@ -292,7 +294,7 @@ No label is above 70%, and all four are inside criterion 3's 12–40% band.
 > *Could have been:* `claim` (the post is mostly reported fact about a race)
 > or `question`.
 >
-> *I chose, because:* `question`. The title is a statement, so it fell to
+> *Chosen, because:* `question`. The title is a statement, so it fell to
 > the body rule. Asking readers for their opinion counts as asking, and that
 > question is the only thing the writer adds. The first draft of rule 1
 > listed only help and information, and one pre-label pass called this `claim`.
@@ -331,7 +333,7 @@ unit 6 diagnosis, noted here before any results.
 | `chatter` | 33 | 7 | 7 |
 
 `chatter` has only **7** test posts, and `firsthand` has 8. Their F1 will
-jump between seeds next unit: one post is worth about 0.14 of recall.
+jump between seeds next unit: one post is worth about 0.14 of `chatter` recall (0.125 for `firsthand`).
 
 **The run:** training took about 13 seconds on `mps`. `results.json` (device
 `mps`, torch 2.14.1) and `test_split.csv` are committed. The training loss
@@ -404,9 +406,10 @@ Claude, and I did not label or review any rows by hand.**
 
 The brief asks for the cold 20 and the review to be done by hand. I asked
 Claude to do both, so this dataset has no human check of its own. The `note`
-column on every row says which process produced its label. The unit 6
-agreement check against the staff set will be the first comparison between
-these rules and a human labeller.
+column on every row says which process produced its label. The unit 6 agreement check
+is the first time I label anything here myself, and it uses the staff's
+taxonomy, not these rules. It will show how I apply a written rule, not
+whether the labels in `labels.csv` match a human's.
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 
