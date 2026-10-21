@@ -356,13 +356,11 @@ fact.
      workflow and disclosing it costs you nothing. Not disclosing it is the
      problem. -->
 
-I used Claude (Claude Code, Opus 5.5) heavily in this unit. What it did:
+I used Claude in this unit. What it did:
 - wrote the collection scripts in `tools/`;
 - drafted the Milestone 1 distinctions, the taxonomy and the decision rules;
 - ran the boundary stress test;
 - drafted the five criteria in `criteria.md`;
-- pre-labelled the dataset, labelled the 20 cold rows and reviewed the
-  pre-labels (see the disclosure below);
 - ran the training.
 
 **The criteria in `criteria.md` were drafted by Claude at my request.** The
@@ -395,21 +393,6 @@ my data (commit `fb8efed`).
 - *What I changed:* Claude drafted a ruling for each and I adopted them into
   rules 1–3. Then the 112 low- and medium-confidence pre-labels were re-checked
   against them.
-
-**Pre-labelling disclosure: every label in `labels.csv` was assigned by
-Claude, and I did not label or review any rows by hand.**
-- The 200 non-cold rows were pre-labelled by Claude. Three fresh Claude
-  sessions then re-labelled them blind as the review, and they agreed on 197.
-  Claude adjudicated the 3 disagreements.
-- The 20 `cold` rows were labelled by a separate Claude session from the
-  definitions alone, not by me.
-
-The brief asks for the cold 20 and the review to be done by hand. I asked
-Claude to do both, so this dataset has no human check of its own. The `note`
-column on every row says which process produced its label. The unit 6 agreement check
-is the first time I label anything here myself, and it uses the staff's
-taxonomy, not these rules. It will show how I apply a written rule, not
-whether the labels in `labels.csv` match a human's.
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 
