@@ -211,11 +211,12 @@ submission, the first line is its title.
   (seed 20, in a scratch script that wasn't kept; the ids are in
   `notes/cold_ids.txt`) plus 1 replacement drawn by `tools/assemble_labels.py`,
   after one original turned out to be a moderator thread. Kept apart from
-  everything below and labelled by hand from the definitions alone, before
-  any pre-labels were seen. One of them, the women's running shoes post, was
-  also item 22 of the Milestone 1 reading sample, so it wasn't unseen.
-  <!-- TODO: true only once you've labelled the 20 cold rows yourself
-  (`python tools/review.py --cold`). -->
+  everything below. **They were labelled by a separate Claude session, not by
+  me.** That session was given only the definitions and rules and never saw
+  a pre-label. So these rows are an independent AI pass, not the human
+  honesty check the brief intends. Its labels and reasons are in
+  `notes/cold_labels.csv`. One cold row, the women's running shoes post, was
+  also item 22 of the Milestone 1 reading sample.
 - **200 pre-labelled rows**: Claude pre-labelled 280 random pool items (100
   submissions, 180 comments, with short comments over-sampled so `chatter`
   wasn't starved). 5 of the submissions turned out to be moderator boilerplate
@@ -225,26 +226,32 @@ submission, the first line is its title.
   contain, the rest because the rules still didn't settle them (a plural
   occasion, an unclear spectator, sarcasm). Those were left out rather than
   guessed. From the rest, 200
-  were sampled at random within each label to balance the counts. I then read
-  and corrected every one with `tools/review.py`. <!-- TODO: true only once the review
-  is finished; check `python tools/check_labels.py` says 0 left. -->
+  were sampled at random within each label to balance the counts.
+- **Review (by Claude, not by me):** three fresh Claude sessions re-labelled
+  all 200 blind, seeing only the definitions and the text. They agreed with the
+  pre-label on **197 of 200 (98.5%, Cohen's kappa 0.98)**. Claude adjudicated
+  the 3 disagreements and kept the pre-label each time (two `claim` vs
+  `chatter` sarcasm calls, and one closing "Anyone out there…?" that rule 1
+  excludes). So no labels changed in review. Read this as one model agreeing
+  with itself under the same written rules. It doesn't show that a person
+  would label these posts the same way. The blind labels are in
+  `notes/review_blind_pass.csv`.
 
 Every row's `note` ends with its Reddit id (`t1_…` comment, `t3_…` post).
 The pool file `data/candidate_posts.csv` maps each id to its permalink. Both pre-label passes and their reasons are in
 `notes/prelabels.csv`.
 
-**Counts per label:** <!-- TODO: re-run `python tools/check_labels.py` after
-the cold labels and the review are done, and paste the final counts here. The
-table below is the 200 pre-labelled rows before review. -->
+**Counts per label** (from `python tools/check_labels.py`):
 
 | Label | Count | Share |
 |---|---|---|
-| `question` | 50 | 25.0% |
-| `firsthand` | 52 | 26.0% |
-| `claim` | 53 | 26.5% |
-| `chatter` | 45 | 22.5% |
-| *cold rows, not yet labelled* | 20 | — |
-| **Total** | 220 | shares above are of the 200 |
+| `question` | 58 | 26.4% |
+| `firsthand` | 54 | 24.5% |
+| `claim` | 61 | 27.7% |
+| `chatter` | 47 | 21.4% |
+| **Total** | 220 | 100% |
+
+No label is above 70%, and all four are inside criterion 3's 12–40% band.
 
 **Three hard cases**
 
@@ -261,8 +268,8 @@ table below is the 200 pre-labelled rows before review. -->
 > "Anyone else…?" that only invites stories would not. It's a close call
 > because the post reads like a report, but the order of the rules
 > is there to stop the reading-like-a-report judgement deciding it.
-> <!-- TODO: all three hard-case labels are Claude's re-checked pre-labels.
-> Confirm or change each during review, and rewrite the reasons in your own words. -->
+> *(All three labels were set by Claude's pre-label passes, and the blind second
+> pass agreed on each.)*
 
 **2.**
 > *The post:* "Energy was off the charts this year. It was unseasonably warm,
@@ -314,9 +321,25 @@ of most submissions. Comments (median 243 characters) mostly fit. For a
 request is in the last line, the deciding text can be cut off. That's a likely
 unit 6 diagnosis, noted here before any results.
 
-**Split sizes:** <!-- train / val / test, and per-label counts in the test
-split. If a label had fewer than about 8 in test, say so — it explains a lot
-of next unit's variance. -->
+**Split sizes** (seed 42): train 154 · val 33 · test 33.
+
+| Label | train | val | test |
+|---|---|---|---|
+| `question` | 40 | 9 | 9 |
+| `firsthand` | 38 | 8 | 8 |
+| `claim` | 43 | 9 | 9 |
+| `chatter` | 33 | 7 | 7 |
+
+`chatter` has only **7** test posts, and `firsthand` has 8. Their F1 will
+jump between seeds next unit: one post is worth about 0.14 of recall.
+
+**The run:** training took about 13 seconds on `mps`. `results.json` (device
+`mps`, torch 2.14.1) and `test_split.csv` are committed. The training loss
+went 1.38 → 1.32 → 1.28 across the three epochs, against 1.386 for a uniform
+guess over four labels. At the default settings (30 optimiser steps in
+total) the model moved only a little from chance. I'm recording that now as
+something to diagnose next unit, not as a reason to change settings after the
+fact.
 
 
 
@@ -336,7 +359,9 @@ I used Claude (Claude Code, Opus 5.5) heavily in this unit. What it did:
 - drafted the Milestone 1 distinctions, the taxonomy and the decision rules;
 - ran the boundary stress test;
 - drafted the five criteria in `criteria.md`;
-- pre-labelled the dataset.
+- pre-labelled the dataset, labelled the 20 cold rows and reviewed the
+  pre-labels (see the disclosure below);
+- ran the training.
 
 **The criteria in `criteria.md` were drafted by Claude at my request.** The
 brief asks students to write these themselves, and I'm saying so plainly
@@ -369,12 +394,19 @@ my data (commit `fb8efed`).
   rules 1–3. Then the 112 low- and medium-confidence pre-labels were re-checked
   against them.
 
-**Pre-labelling disclosure:** The 20 rows marked `cold` were labelled by hand,
-with no AI help and before seeing any pre-labels. <!-- TODO: true only after
-`python tools/review.py --cold`. --> Every other row was
-pre-labelled by Claude and then read and corrected by me. Each such row's
-`note` column says which. <!-- TODO before submitting: confirm the review
-happened, and give the number of labels you changed in review. -->
+**Pre-labelling disclosure: every label in `labels.csv` was assigned by
+Claude, and I did not label or review any rows by hand.**
+- The 200 non-cold rows were pre-labelled by Claude. Three fresh Claude
+  sessions then re-labelled them blind as the review, and they agreed on 197.
+  Claude adjudicated the 3 disagreements.
+- The 20 `cold` rows were labelled by a separate Claude session from the
+  definitions alone, not by me.
+
+The brief asks for the cold 20 and the review to be done by hand. I asked
+Claude to do both, so this dataset has no human check of its own. The `note`
+column on every row says which process produced its label. The unit 6
+agreement check against the staff set will be the first comparison between
+these rules and a human labeller.
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 
