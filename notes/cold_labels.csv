@@ -1,0 +1,21 @@
+id,cold_label,cold_conf,cold_reason
+t1_goclmjt,chatter,low,"Rule 3: talk about subreddit posting habits; 'you are a runner now' opinion is about posting, not running"
+t1_nxum8y8,claim,high,Rule 2: course-measuring facts and rules; measuring courses is not the writer's own running
+t1_goc55k5,chatter,medium,"Rule 3: remark about social media self-validation, nothing about running"
+t3_1rgaic3,question,medium,"Rule 1: post exists to solicit readers' funniest signs; body is a list, not a complete report"
+t3_1vr3c3d,question,high,Rule 1: title asks readers how much heat sets fitness back
+t1_nyd4klv,claim,high,"Rule 2/3: general statement about marathon damage and recovery, no own account"
+t1_pgwdqfi,firsthand,high,Rule 2: named races of own: 'I've done Amsterdam... Paris... Leiden twice... last year'
+t1_p39nmd1,claim,low,"Rule 2: 'after that experience' is vague; no specific occasion detail, but says something about pre-race meals"
+t1_19re85l9l87pg,question,high,Rule 1: comment's point is asking readers which running cue they use
+t1_oc0yk7s,firsthand,high,Rule 2: 'developed bone marrow edema... when I first hit around 25 miles per week'; 'routinely run 40-50 mpw'
+t1_oc0o346,claim,high,Rule 2/3: opinion that HIIT extends running years; no firsthand account
+t3_5o46jt,claim,medium,"Rule 2/3: news about another runner's training; someone else's running, states something about runners"
+t3_1pne8w9,question,high,Rule 1: title asks 'Did you know this?'; body asks women readers several questions
+t3_1p0wnx9,question,high,Rule 1: title asks whether pace can improve into your 40s
+t3_k9z9mt,question,medium,Rule 1: closing 'How do you deal with it?' and 'would love to hear multiple opinions' asks readers
+t1_19rek9ypg3yas,claim,high,"Rule 2/3: opinion about crowd support in marathons, generic second person, no own account"
+t1_o3wnb66,claim,high,Rule 2: advice to beginners; 'I'm pretty good at analyzing pain' has no specific occasion detail
+t1_oc77sty,claim,high,Rule 2/3: assertion that terrain is healthier than pavement for joints
+t3_1suhptl,question,high,Rule 1: title asks whether Zone 2 is needed or overhyped
+t3_1x6k5w6,question,medium,Rule 1: weekly thread asks readers how their week of running is going
