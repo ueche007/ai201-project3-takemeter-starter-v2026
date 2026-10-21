@@ -40,9 +40,13 @@ def html_to_text(raw):
     return s.strip()
 
 
+MOD_THREADS = ("super moronic monday", "miscellaneous monday chit chat")
+
+
 def is_bot(text):
     t = text.lower()
-    return "this is a bot message" in t or "automatically removed by" in t
+    return ("this is a bot message" in t or "automatically removed by" in t
+            or t.startswith(MOD_THREADS))     # scheduled mod threads, boilerplate body
 
 
 def rows_from(path):

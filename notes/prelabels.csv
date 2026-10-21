@@ -1,0 +1,276 @@
+id,kind,pass1_label,pass1_conf,pass1_reason,recheck_label,recheck_conf,recheck_reason,prelabel,prelabel_conf
+t1_goc8s08,comment,chatter,high,Complaint about reporting users on Reddit; nothing about running.,,,,chatter,high
+t3_1pcbzmz,post,question,medium,Rule 1: title is an imperative request ('Lend me your tales'); long personal account doesn't override.,question,high,Rule 1: imperative title requests answers ('Lend me your tales'); long personal account doesn't override.,question,high
+t3_vhkmht,post,claim,high,General assertion about onlookers; 'when I first started running' has no specific occasion detail.,,,,claim,high
+t1_goe3re2,comment,chatter,high,Talk about commenting on someone's Reddit posts; nothing about running.,,,,chatter,high
+t1_nxupfjh,comment,firsthand,high,"Named race: 'Marathon2Marathon in West Texas', bused 26.2 miles to the start.",,,,firsthand,high
+t1_pgx5prh,comment,claim,high,Recommends Chicago over Boston/NYC; no own race account.,,,,claim,high
+t1_oc2l9ky,comment,firsthand,medium,"'started running at 50 (now 57)', kettlebells twice a week; age-as-date detail is borderline.",firsthand,medium,"Rule 2: 'started running at 50 (now 57)' age as date, like README's 'first marathon at 41'.",firsthand,medium
+t1_oc1cpfv,comment,firsthand,medium,"'50–80 mpw during marathon builds for the last 5 years'; habitual, like README's 40-60 km weeks.",firsthand,high,Rule 2 habitual training with number: '50–80 mpw during marathon builds for the last 5 years'.,firsthand,high
+t1_p39ia3i,comment,chatter,high,Joke/thanks about someone's number mystery; nothing about running.,,,,chatter,high
+t3_e2fak8,post,claim,medium,Opinion about runner nods/thumbs-up; personal habit but no specific occasion detail.,claim,medium,"Rule 2: habitual runner-nod habit, no number or occasion; sincere opinion about runners.",claim,medium
+t3_1plmgej,post,question,high,Rule 1: title asks readers a question.,,,,question,high
+t1_nyiegkm,comment,firsthand,high,'ran 26 miles 4 weeks out from my first ever marathon'.,,,,firsthand,high
+t3_gncmqw,post,firsthand,medium,"'Yesterday... seemingly effortless training run'; mostly a reminder, but date detail triggers firsthand.",firsthand,high,Rule 2 relative date: 'Yesterday... seemingly effortless training run'; reminder advice doesn't override.,firsthand,high
+t1_p3a4v7n,comment,chatter,high,Beer-is-a-vegetable joke; nothing about running.,,,,chatter,high
+t1_gocaw9o,comment,chatter,high,Remark about people fishing for compliments online; nothing about running.,,,,chatter,high
+t1_oc579gg,comment,claim,high,General advice on causes of knee pain for new runners.,,,,claim,high
+t3_1thn4h2,post,claim,high,Title question is rhetorical; body is heat-running tips and warnings.,,,,claim,high
+t1_o3xi0d2,comment,claim,high,General assertion about distinguishing pain types.,,,,claim,high
+t3_1qe7gyv,post,question,high,Rule 1: title 'How to find energy to run while grieving' asks readers.,,,,question,high
+t1_nxv1yc6,comment,claim,medium,"Jokey, but asserts nobody gets near 2hrs on the (downhill) course; says something about races.",claim,medium,Rule 3: 'noone's getting near 2hrs' on downhill course reads sincere; Nessie line is the joke.,claim,medium
+t3_fczvkq,post,firsthand,high,'today on my birthday i ran a 39:59 10k'.,,,,firsthand,high
+t1_oc1pxbp,comment,claim,high,General statements on joint health and strength training.,,,,claim,high
+t1_o4390q7,comment,claim,low,"Own pain experience but no particular occasion; 'a mile or two' is vague, no hurt body part named.",claim,low,"Rule 2: own pain story but no body part, date or race; 'a mile or two' too vague.",claim,low
+t1_nxuq4ea,comment,claim,high,Facts about Boston-qualifier downhill penalties.,,,,claim,high
+t1_o43wzh7,comment,claim,low,"Personal stance on (presumably running) goals; no detail; not social talk, but running link is implicit.",claim,low,"Rule 3: sincere stance on (running) goal-setting, not social talk; running link only implicit.",claim,low
+t3_lkcu9t,post,firsthand,high,'yesterday... pitbull mix... sprayed at about 4 feet'; 'scars on my right arm'.,,,,firsthand,high
+t3_1x8eyo2,post,question,medium,Title asks 'What's wrong with...' and ends 'Your thoughts?'; could be read as rhetorical rant.,question,high,Rule 1: title asks readers 'What's wrong with...' and ends 'Your thoughts?'; opinion requests count.,question,high
+t1_p39ej9z,comment,claim,high,Asserts hyponatremia is rare vs dehydration.,,,,claim,high
+t3_1p9okep,post,claim,low,Call to run 5k daily in December: tells readers what to do; not a request for info; no own run detail.,claim,medium,Rule 2: organising a 5k-a-day challenge isn't own running; call to run tells readers what to do.,claim,medium
+t1_p39piwd,comment,claim,low,Quoted line about starting running to burn calories; no detail; unclear if writer's own or a joke.,chatter,medium,Rule 3: whole comment is a quoted remark with no point of the writer's own.,chatter,medium
+t1_pgwum59,comment,firsthand,medium,Named races: 'I have only done NYC and London'.,firsthand,high,Rule 2 named races: 'I have only done NYC and London'.,firsthand,high
+t1_phx4uj4,comment,firsthand,high,"'started about a calendar year ago', 'trouble running a mile', 'Now 10k 4x a week'.",,,,firsthand,high
+t1_pgw8hho,comment,firsthand,low,"'just did one a couple days ago'; vague date, the race is unnamed.",firsthand,medium,Rule 2 relative date: 'just did one a couple days ago'; event unnamed but implied race.,firsthand,medium
+t3_1ot7fx9,post,firsthand,high,Race report: 'Madison Marathon... Net Time: 4:52:14'; 'Feel free to ama' is a closing invite.,,,,firsthand,high
+t1_pgwdpve,comment,firsthand,medium,Named race: 'First time running Boston'; very short.,firsthand,high,Rule 2 named race: 'First time running Boston'.,firsthand,high
+t1_nycqt95,comment,claim,low,"'How are they accomplishing this?' reads as skeptical/rhetorical, then argues the math; about others' running.",claim,medium,Rule 1: skeptical question the writer answers with own math; argues 50 mi/day is impractical.,claim,medium
+t3_1q9xti2,post,question,high,Rule 1: title asks 'Whats up with all this gear?'.,,,,question,high
+t3_1qjs9mh,post,question,high,Rule 1: title asks how readers approach slow paces.,,,,question,high
+t1_goc6gtj,comment,chatter,high,Snark about scrolling past posts; Reddit talk.,,,,chatter,high
+t3_1pagxrp,post,question,high,Body asks for gift recommendations ('Let me know all the things...').,,,,question,high
+t1_nxupsy0,comment,claim,high,Fact: Boston times not record-eligible.,,,,claim,high
+t3_1x4wsmj,post,question,high,Rule 1: title asks for headphone recommendations.,,,,question,high
+t1_nxwwjup,comment,firsthand,high,'did a half iron w the tide and finish 15 mins faster than expected'.,,,,firsthand,high
+t1_ny9tfb4,comment,question,high,Asks for specific information: what an 80-100 mile week looks like.,,,,question,high
+t1_nyetwp5,comment,firsthand,high,'first maraton at 41... 40-60 km... 1 week to recover' (README example).,,,,firsthand,high
+t1_o3x5c4s,comment,firsthand,high,'3 days off... knee pain'; 'first half marathon in 4 weeks'.,,,,firsthand,high
+t1_p3cg0fp,comment,chatter,high,Game about guessing which sub (circlejerk or not); Reddit talk.,,,,chatter,high
+t1_19reswre9tlaa,comment,question,high,Asks for help with own knee ache after consecutive runs.,,,,question,high
+t1_o3x06go,comment,firsthand,medium,'took two days off at the start of this week to rest a minor injury'; injury unnamed.,firsthand,high,Rule 2 relative date: 'took two days off at the start of this week to rest a minor injury'.,firsthand,high
+t1_p3a1f76,comment,claim,low,Vague personal anecdote (shamed for eating; 'I exercise. A lot.'); no detail; running link weak.,claim,low,Rule 3: sincere gripe that heavy exercisers get food-shamed; no running occasion; running link weak.,claim,low
+t3_1otahon,post,question,high,Title requests 'Running advice'; body asks 'Any tips?' for own fuelling.,,,,question,high
+t1_goc44nk,comment,chatter,high,Complaint about subreddit posts; naming 'HM' inside Reddit talk stays chatter.,,,,chatter,high
+t1_oc2d13o,comment,firsthand,low,"Hurt body part 'knee issues directly related to running', but recurring, no particular occasion.",firsthand,high,Rule 2 recurring hurt body part: 'knee issues directly related to running'.,firsthand,high
+t1_oc6eoes,comment,question,medium,"Asks the other user specific info: running on the bone marrow edema, and where.",question,high,Rule 1: asks the other user for information about their bone marrow edema.,question,high
+t1_p3cbjl5,comment,claim,low,Opinion via creatine/steroids analogy; unclear running link without thread context.,claim,low,Rule 3: sincere opinion via creatine/steroids analogy; running link unclear without thread context.,claim,low
+t3_1tpt1ts,post,firsthand,high,Race report: 'Servus Calgary Marathon... 21.1 km... ~2:29:00'.,,,,firsthand,high
+t1_nxv7tu5,comment,claim,high,Assertion about record-eligibility rules vs marathon rules.,,,,claim,high
+t1_nxw2e6d,comment,claim,high,Historical facts about origin of the marathon distance.,,,,claim,high
+t3_g90c95,post,claim,medium,"Opinion on treatment of slow runners; target time is a goal, no own run occasion; questions rhetorical.",claim,high,"Rule 1/2: statement title, rhetorical questions; six-hour target is a goal, not an occasion.",claim,high
+t3_1t4rulh,post,firsthand,high,'Avenue of the Giants Marathon... Finish Time: 04:55:44'.,,,,firsthand,high
+t3_1w4d1jv,post,firsthand,low,"'currently running a 5k in the 23:00 range'; closing 'Anyone out there...?' read as invite, not help request.",firsthand,medium,Rule 2 habitual number: 'currently running a 5k in the 23:00 range'; closing 'Anyone out there...' is invitation.,firsthand,medium
+t1_goc5ule,comment,claim,low,"Mostly about subreddit achievement posts, but opines on goals in sport and that 'most of us' don't know runners.",claim,medium,Rule 3: sincere opinion that goals matter in sport and runners share achievements; not mere meta talk.,claim,medium
+t1_nxvsa8a,comment,claim,medium,Inference about course measurement on an unnamed race; no own-run detail; not just thanks.,claim,medium,Rule 2: inference about an unnamed race's course measurement; no own-run detail shown.,claim,medium
+t1_p39et4s,comment,chatter,medium,"Grandma's 21-almonds belief; someone else, nothing about running.",chatter,medium,"Rule 3: grandma's almond belief; someone else, says nothing about running.",chatter,medium
+t1_nxyn7nl,comment,claim,high,Opinion: Boston course easier for elites (Newton Hills timing).,,,,claim,high
+t1_gocax61,comment,chatter,high,Agreement plus remark on social media noise; nothing about running.,,,,chatter,high
+t1_nybw5od,comment,claim,high,Explains running tangents vs F1 racing line.,,,,claim,high
+t1_pgfplj6,comment,claim,medium,"Coaching advice; clarifying question isn't the point; 'with new runners' is others' running, no own occasion",claim,high,Rule 2: coaching new runners isn't own running; training-plan advice; clarifying question not the point.,claim,high
+t1_god9m5s,comment,chatter,high,Complaint about subreddit rules and post removals; nothing about running,,,,chatter,high
+t3_i5fvgt,post,firsthand,high,"'Distance: 1 Mile, Pace: 9 minutes and 32 seconds' this morning",,,,firsthand,high
+t1_nxxzz7k,comment,claim,high,Fact about Loch Ness point-to-point course; no own run,,,,claim,high
+t1_nxulfkj,comment,claim,medium,Agreement plus opinion that cornering takes effort; no specific occasion,claim,medium,Rule 2: habitual line-choice remark with no number or occasion; opinion on cornering effort.,claim,medium
+t3_1rdg9yc,post,question,high,Title asks slower runners how they stay motivated,,,,question,high
+t1_gockzuw,comment,chatter,medium,Joke about posts being 'shitposting'; talk about subreddit content,chatter,medium,Rule 3: joke about posts being 'shitposting'; talk about subreddit content.,chatter,medium
+t1_p39ckdt,comment,claim,medium,Implied recommendation to keep running (knee thread); joking but says something about running,claim,low,Rule 3: playful but sincere recommendation to keep doing 'it'; referent unclear without context.,claim,low
+t1_o42am9t,comment,firsthand,high,'going out every day for a month in 2023 and injured myself',,,,firsthand,high
+t1_nxue53g,comment,claim,high,Fact about 2011 Boston course record and tailwind; not own running,,,,claim,high
+t3_1srw1u2,post,question,high,Title 'What's next after Boston?' asks readers; body report doesn't override,,,,question,high
+t3_1plntpo,post,question,high,Title asks readers what made winter running stick,,,,question,high
+t1_nyg4k6n,comment,claim,high,General assertion about marathon recovery and training load,,,,claim,high
+t1_o3xy4d6,comment,firsthand,low,"'IT band issues in one leg for the past couple months'; questions seem self-directed venting, not a request",firsthand,medium,"Rule 2 hurt body part, relative date: 'IT band issues in one leg for the past couple months'.",firsthand,medium
+t3_20u6a4,post,claim,low,"Link post titled with gear topic; no assertion or request, but about gear not social",claim,low,"Rule 3: gear-topic link share, no social talk; but no assertion or request either.",claim,low
+t1_od6ax5w,comment,claim,high,Assertions about survivorship bias and Alentorn-Geli study,,,,claim,high
+t1_pgy9nis,comment,firsthand,high,"'running with 56,000 people (Chicago)' - named race the writer ran",,,,firsthand,high
+t3_hma1ju,post,firsthand,high,'just ran my first 5K in 36:10',,,,firsthand,high
+t1_pgee673,comment,claim,high,Advice: build base before speedwork,,,,claim,high
+t1_nxvd1wa,comment,question,high,Asks for specific information: is the tangent line like an F1 racing line?,,,,question,high
+t1_pgwhcmf,comment,claim,medium,"'from experience' plus lottery/travel hiccups, but no named race, time or date",claim,medium,"Rule 2: 'from experience' with lottery/crowd, but no named race, time or date.",claim,medium
+t1_p39hcbk,comment,claim,high,General assertions about running and knee health,,,,claim,high
+t3_1ve0l8z,post,question,high,Body asks for recovery methods for own situation: 'please brutalize my regimen',,,,question,high
+t1_p5nh5h7,comment,question,medium,Requests specific information: correct URLs for cited studies,question,high,Rule 1: requests specific information (correct URLs for cited studies).,question,high
+t3_mgmnbd,post,question,high,Title asks readers' most embarrassing running moment; stays question despite story,,,,question,high
+t1_p39dtot,comment,claim,low,"Nutrition advice (possibly sarcastic) about what runners eat; opinion, not pure social talk",chatter,low,Rule 3: reads as mocking diet advice in almond thread; no sincere point about running.,chatter,low
+t1_nxuli8u,comment,claim,high,Assertion about wind thresholds for track world records,,,,claim,high
+t1_pgwsk13,comment,firsthand,medium,'I did NYC twice' - named race; 'twice' alone would be a bare count,firsthand,high,Rule 2 named race: 'I did NYC twice'.,firsthand,high
+t1_o3xm5w1,comment,claim,low,"Crochet tendonitis joke; implies running is injury-prone, an opinion about running",chatter,medium,Rule 3: joke; running named only in the punchline; crochet tendonitis isn't running.,chatter,medium
+t3_1aolc1s,post,claim,medium,News share; opinion that Kiptum and coach were paving marathon's future,claim,medium,"Rule 3: sincere opinion that Kiptum and coach were paving marathon's future, beyond condolence.",claim,medium
+t1_p39uueb,comment,chatter,low,Food preference (sardines); says nothing explicit about running,chatter,medium,"Rule 3: food preference (sardines); nothing about running, races, gear or runners.",chatter,medium
+t1_o466oih,comment,claim,medium,'learned the hard way' is a vague appeal; general statement about needing rest,claim,medium,Rule 2: 'learned the hard way' is a vague appeal; general point about resting.,claim,medium
+t1_19resbu92gnaa,comment,question,high,Asks 'When can I resume jogging?' about own hamstring injury,,,,question,high
+t1_goc9fi3,comment,chatter,high,Talk about filtering internet content and the thread; nothing about running,,,,chatter,high
+t1_p3anqyt,comment,claim,medium,"Sarcastic opinion: gels don't cause heart attacks, intense cardio might",claim,medium,"Rule 3: sarcasm with sincere point: gels don't cause heart attacks, intense cardio might.",claim,medium
+t1_nxzdhan,comment,claim,medium,Assertion (maybe tongue-in-cheek) about wind effect on a course,claim,low,"Rule 3: hyperbole about course wind; may be joke, but likely sincere point about wind assistance.",claim,low
+t3_nto29h,post,firsthand,high,'finally got a sub 40 5k... on the treadmill'; 'I was 400 pounds last fall',,,,firsthand,high
+t3_1x53jc9,post,firsthand,high,"Race report: Chicago Marathon Oct 11 2026, 3:55:03",,,,firsthand,high
+t3_8tmfls,post,firsthand,medium,"Title imperative is exhortation, not request; 'PR of 1:54:57 at the Carmel Half Marathon'",firsthand,high,Rule 1 exhortation title not a request; Rule 2: 'PR of 1:54:57 at the Carmel Half Marathon'.,firsthand,high
+t1_pgwos3q,comment,firsthand,high,'I ran Boston last year and qualified again for 2027',,,,firsthand,high
+t3_1q6h8ok,post,question,high,Title asks readers their ideal running frequency,,,,question,high
+t3_jqm1v5,post,firsthand,high,'ran a strong 11 miles' when a can was thrown during long run,,,,firsthand,high
+t1_nxuzt2d,comment,claim,low,"Sarcastic reductio about race purism (no sneakers, watches); opinion on race rules",claim,medium,Rule 3: sarcastic reductio with a sincere point opposing race-rule purism.,claim,medium
+t1_godki6q,comment,chatter,high,Joke about ignoring annoying posts; nothing about running,,,,chatter,high
+t3_2l6h2y,post,firsthand,high,"'10 mile run along the lake... averaged an 8:45 pace', lakefront 50/50",,,,firsthand,high
+t1_o3x6uig,comment,claim,high,'been on both sides' is vague; general opinion about running as coping,,,,claim,high
+t1_godoqot,comment,chatter,medium,"Joke about LetsRun forum culture; talk about a forum, not running itself",chatter,medium,"Rule 3: talk about the LetsRun forum's culture, not about running itself.",chatter,medium
+t3_1wxukty,post,question,high,Title 'seeking feedback'; body asks agree/disagree and advice for own race,,,,question,high
+t1_p3crbd0,comment,claim,high,Rebuts hydration/protein myths; habitual 'threshold session' not a particular occasion,,,,claim,high
+t3_kica0p,post,firsthand,high,'Today I ran 2 miles in 28 minutes',,,,firsthand,high
+t3_1vua7a2,post,question,medium,Title asks readers' opinion on 2026; 'I want to start a conversation',question,high,Rule 1: title asks readers' opinion 'Is 2026 the greatest year...'; 'I want to start a conversation'.,question,high
+t1_gociage,comment,chatter,high,About the subreddit becoming a 'check out my' sub,,,,chatter,high
+t1_pgw9l18,comment,claim,high,Opinion about NYC Marathon crowds; no own detail,,,,claim,high
+t1_goc4alf,comment,chatter,high,About r/C25k posting culture,,,,chatter,high
+t1_19refxa6qtl4x,comment,chatter,low,"Remark on a bridge surface; context unclear, nothing explicit about running",chatter,low,Rule 3: remark on a bridge surface; nothing explicit about running without thread context.,chatter,low
+t1_goca8tm,comment,chatter,high,Argument about subreddit moderation,,,,chatter,high
+t1_p39pg9l,comment,chatter,medium,Joke about water and death; nothing explicit about running,chatter,medium,Rule 3: joke about water and death; says nothing about running.,chatter,medium
+t1_gocek5g,comment,claim,medium,Opinion that cheering helps beginners keep running (in meta thread),claim,high,Rule 3: sincere opinion that cheering helps beginners keep running.,claim,high
+t1_phx1ps7,comment,claim,medium,Gear purchase recommendation 'Do it... No brainer'; buying isn't running,claim,high,Rule 2/3: gear purchase recommendation; buying shoes for $130 isn't own running.,claim,high
+t1_pgwis6n,comment,firsthand,medium,Chicago in 2022 vs 2024 - named race and years; unclear if ran or spectated,claim,low,"Rule 2: Chicago 2022 vs 2024 crowds, but no sign writer ran; spectating isn't own running.",claim,low
+t3_p5p3co,post,question,medium,Title asks 'How do y'all celebrate PRs?'; question rule precedes 43:10 5K detail,question,high,Rule 1: title asks readers 'How do y'all celebrate PRs?'; overrides 43:10 5K report.,question,high
+t3_1ruvpl1,post,question,high,Title asks 40+ female runners if they noticed a change,,,,question,high
+t3_jel2t4,post,firsthand,high,Title imperative is exhortation; 'hit by a truck... 1 broken toe and a bruised hip',,,,firsthand,high
+t3_1p2vifq,post,question,high,Title asks favourite unconventional pre-run food,,,,question,high
+t1_nyd8z72,comment,chatter,high,Apology for typo and Reddit absence,,,,chatter,high
+t3_fgig7j,post,firsthand,high,'my dog and i go for a 10 mile run every Saturday'; 177 to 157 lbs,,,,firsthand,high
+t1_o3xaa4g,comment,firsthand,high,"'shin splints... 5 miles, then 6 miles the day after'",,,,firsthand,high
+t1_pfg9s8v,comment,claim,high,Coaching others is not own running; advice 'listen to your body',,,,claim,high
+t1_nxubasf,comment,claim,high,Assertion that Boston and NYC don't follow the rule,,,,claim,high
+t3_1rvop7b,post,claim,low,Title question reads rhetorical (premise-laden complaint); body is opinion on Strava AI,claim,low,"Rule 1: premise-laden 'Why...' title reads rhetorical; body is opinion on Strava AI, no request.",claim,low
+t1_occlrus,comment,firsthand,low,"'bought ... Puma Magmax before running again and no issues', knee pain; occasion/detail thin and partly habitual",firsthand,medium,"Rule 2 recurring hurt body part: 'if I stop running for 2 months, my knees... hurting'.",firsthand,medium
+t3_1wsgcw8,post,firsthand,high,"Race report: 'Melissa's Road Race ... 1:46:53', Sept 26 2026",,,,firsthand,high
+t1_nydd5ag,comment,claim,low,"'usually run 26' is habitual practice, not a particular occasion; no firsthand account",firsthand,high,Rule 2 habitual training with number: 'I'll usually run 26 a week or two before the race'.,firsthand,high
+t1_pgwikot,comment,chatter,low,"Quip ('hub of the universe', likely Boston); no clear statement about running or races",chatter,low,Rule 3: quip about Boston's nickname; no clear sincere statement about the race.,chatter,low
+t1_ph5gigq,comment,chatter,high,Oktoberfest food anecdote; says nothing about running,,,,chatter,high
+t3_n024rw,post,firsthand,high,"'Last Sunday, I ran 28 miles in 4hrs:44 mins', first marathon April 25th",,,,firsthand,high
+t3_1ok45is,post,question,high,Title asks readers where they carry keys/phone,,,,question,high
+t3_1wuzdvc,post,firsthand,high,Race report: 'Loch Ness Marathon ... 2:58:34',,,,firsthand,high
+t3_1sttn3p,post,firsthand,high,"Tips embedded in report: 'Boston Marathon, April 20, 2026, 2:47:xx'",,,,firsthand,high
+t1_o40bvpy,comment,claim,high,General assertion about rest vs streaks; no personal account,,,,claim,high
+t3_dk3xz6,post,question,high,Title asks 'How long before I can do this...?',,,,question,high
+t1_goedi42,comment,chatter,medium,"Talk about the post/Reddit (uninteresting post, seeking validation); no running content",chatter,high,"Rule 3: talk about the post itself (uninteresting, seeking validation); no running content.",chatter,high
+t1_pgeid9b,comment,claim,high,Advice (add strides); 'I found that really makes a difference' is a vague appeal,,,,claim,high
+t1_p39gr8y,comment,chatter,low,"Almond-serving fact and mom joke; nutrition trivia, not about running",chatter,medium,Almond-serving fact and mom joke; nothing sincere about running (rule 3: joke),chatter,medium
+t1_nxucafw,comment,claim,high,"Facts about WA course rules, marathon origin, Boston",,,,claim,high
+t3_1ozer3n,post,question,high,Title asks readers for advice they wish they'd known,,,,question,high
+t3_j3dfky,post,firsthand,medium,"'got pleurisy in June', 'concussion last week', 50-60 mpw; imperative title isn't a request for answers",firsthand,high,"Rule 1: title imperative tells, not asks. Rule 2: ""got pleurisy in June"", ""concussion last week""",firsthand,high
+t1_gocc6sl,comment,chatter,medium,About posting dumb stuff on the sub; talk about Reddit,chatter,medium,"About posting on the sub; talk about Reddit, nothing sincere about running",chatter,medium
+t1_goc82cx,comment,chatter,high,Discussion of subreddit Rule 2 and what to post; talk about Reddit,,,,chatter,high
+t3_1r59ng2,post,claim,low,"Title is news statement about Barkley start; body speculative question, not own situation/specific info",question,medium,"Rule 1: asking opinion counts; post's own content is ""Will this see an increase in the number of finishers?""",question,medium
+t3_itml6l,post,firsthand,medium,"'just 2 miles, between 15:00 and 16:00 mile pace' in new Bondi 7s; title question is exclamatory",firsthand,medium,"Rule 1: exclamatory title is rhetorical. Rule 2: ""just 2 miles, between 15:00 and 16:00 mile pace""",firsthand,medium
+t3_fqjb5m,post,firsthand,high,'reached my goal of 5k ... made it in 28 minutes',,,,firsthand,high
+t3_jz18wn,post,firsthand,high,"'First run was January 1st 2020', 'completed an 8 mile run' this morning",,,,firsthand,high
+t1_ph0t1bh,comment,firsthand,high,'I ran Chicago as my first ... (5.5h)',,,,firsthand,high
+t1_pfg2gfv,comment,claim,high,Agreement plus opinion 'enjoyment is what keeps people running long term' (rule 3),,,,claim,high
+t3_1x57wvv,post,question,high,Body asks 'Is there any solution to this?' about own nausea on runs,,,,question,high
+t1_gocit2x,comment,chatter,high,Thanks and comment on civil discourse; nothing about running,,,,chatter,high
+t1_nydy47h,comment,firsthand,high,'During the marathon I hit 20 and my body was done' (first marathon); advice also present,,,,firsthand,high
+t1_gocdhz0,comment,chatter,medium,About r/AdvancedRunning vs r/running posting; 'my first 5k' lacks specific detail,chatter,medium,"About which subreddit welcomes beginners; ""first 5k"" only frames a Reddit anecdote",chatter,medium
+t1_p39ocuo,comment,chatter,high,Joke about the therapist; nothing about running,,,,chatter,high
+t1_19re95mzues2s,comment,firsthand,high,"'first run back after a week off with a cold, 5k at an easy pace'",,,,firsthand,high
+t3_1vnjz41,post,question,high,Title asks 'What's everyone's take on the run club phenomenon?',,,,question,high
+t1_oc0m5dy,comment,claim,high,"General assertion about muscle, joints and injury",,,,claim,high
+t3_1qxfezh,post,question,high,Title asks readers 'Do you see rest as failure?',,,,question,high
+t3_1tfyl2u,post,firsthand,high,Review grounded in own runs: 'finished the Brooklyn Half in 1:53:09' (May 16),,,,firsthand,high
+t1_p39fapy,comment,chatter,low,Joke that lions are bad runners rebutting quoted diet advice; implicit claim at most,chatter,medium,"Rule 3: joke rebutting a quoted remark (""shit runners""); no sincere point",chatter,medium
+t1_godmz5m,comment,chatter,medium,Recommends ARTC (a subreddit) as welcoming; talk about Reddit communities,chatter,medium,"Recommends ARTC community; talk about Reddit communities, not running itself",chatter,medium
+t1_nycnhz4,comment,firsthand,high,"'wanted to run 26mi before my first marathon' and did it, 'very slow'",,,,firsthand,high
+t3_lhj64y,post,firsthand,low,'We managed 5km' yesterday with daughter; closing tips request may count as question,question,medium,"Rule 1: closing ""if anyone has other tips for running with kids let me know"" is a tips request",question,medium
+t1_ny9hbh8,comment,claim,high,Argues 26.2-mile training run not worth fatigue; no personal account,,,,claim,high
+t1_nyhkeo6,comment,firsthand,medium,'I needed to just go ahead and run 24' before race; distance of a particular run,firsthand,high,"Rule 2: own pre-race training with number: ""I needed to just go ahead and run 24""",firsthand,high
+t1_19reco5xfk4f9,comment,firsthand,high,'ran 7.21 miles at 13:15 minutes per mile pace',,,,firsthand,high
+t1_oc9baqx,comment,claim,high,Opinion on survivorship bias in running/knee evidence,,,,claim,high
+t3_1peacwb,post,question,high,Title asks 'What helped you get into running and be consistent?',,,,question,high
+t3_2cqekw,post,claim,medium,"States Fibonacci km-mile conversion fact (5k~3mi, 21k~13mi); no personal account",claim,medium,"Rule 3: sincere fact about km/mile race distances (5k~3mi, 21k~13mi); no own account",claim,medium
+t3_1xasvjb,post,firsthand,high,"Race report: 'Baystate Half Marathon ... 1:29:20', Oct 18 2026",,,,firsthand,high
+t1_o3yps0c,comment,claim,medium,Opinion on rest with hypothetical own habit; no particular occasion,claim,high,Rule 2: hypothetical opinion on rest; no particular occasion or number,claim,high
+t1_nxuc0h4,comment,claim,high,Fact: rule only applies where world records can be set,,,,claim,high
+t1_p3an97y,comment,chatter,low,Venting list of comments people make about her eating; no assertion about running,chatter,medium,Rule 3: quotes others' remarks about her eating with no point of her own,chatter,medium
+t3_gwio6y,post,firsthand,medium,"'first football tryouts (in 6th grade) ... jog, maybe a half mile'; claim title, closing 'anyone else' ignored",firsthand,medium,"Rule 2: ""first football tryouts (in 6th grade) ... jog, maybe a half mile""; closing ""anyone else"" ignored",firsthand,medium
+t1_ny9fwwf,comment,claim,low,States own reason re first marathon prep; no occasion; borderline chatter,claim,medium,"Rule 3: sincere statement of own marathon-prep aim; no occasion, so not firsthand",claim,medium
+t3_mtlio8,post,firsthand,medium,"'today' on a run, driver said 'you're doing great!' and she picked up pace",firsthand,high,"Rule 2: relative date counts: ""today"" on a run, driver said ""you're doing great!""",firsthand,high
+t1_o0nuucv,comment,claim,high,"Advice: long runs of 18-22 miles are enough, save 26 for race",,,,claim,high
+t1_nxwcnfh,comment,claim,low,"Own 'out and back half marathons on coastal roadways' but plural, no particular occasion",claim,low,"Rule 2: ""out and back half marathons on coastal roadways"" is plural; no particular occasion or number",claim,low
+t1_o3wv0jn,comment,chatter,medium,TV quote and age joke; nothing explicit about running,chatter,medium,Rule 3: TV quote plus age joke; no sincere point about running,chatter,medium
+t1_nxuaoie,comment,claim,high,Explains wind-assist rule for course design,,,,claim,high
+t1_pgwg6mb,comment,claim,high,Opinion that big-marathon experience is worth doing once or twice,,,,claim,high
+t3_1w4c85u,post,question,high,Title asks later starters what happened to fitness in years 2-4,,,,question,high
+t3_1x70kei,post,firsthand,high,"Race report: 'Staten Island Half ... 1:24:46', 10/11/2026",,,,firsthand,high
+t1_pfifodx,comment,claim,high,"Advice to beginners: run for time, add short dashes",,,,claim,high
+t3_1x5vglm,post,question,high,Body asks 'what are the most important etiquette tips you have?' for own next race,,,,question,high
+t3_1vwy9xl,post,question,high,Title asks for runners who lift; body asks own mileage sweet spot,,,,question,high
+t1_gog1orw,comment,chatter,high,"Defends people sharing posts; talk about Reddit, downvotes",,,,chatter,high
+t1_pfgit5l,comment,chatter,high,Sarcastic social reply; nothing about running,,,,chatter,high
+t1_19rebupggxdgh,comment,claim,high,States cycling-to-running transfer and speculates on hip mechanics,,,,claim,high
+t3_1pyqkj5,post,question,high,Title asks 'How can I find the motivation again',,,,question,high
+t1_pgwlg71,comment,question,medium,Comment genuinely asks why ('Honestly asking') for information; NYC mention secondary,question,high,"Rule 1: ""Why? Honestly asking"" seeks information/opinion from readers",question,high
+t3_iw34u6,post,question,high,"Title asks 'Constantly harassed on runs, what to do?'",,,,question,high
+t1_oc112y5,comment,claim,medium,"Opinion that health is a byproduct, not a training goal",claim,medium,Opinion that health is a training byproduct; no particular occasion,claim,medium
+t1_nxz63jp,comment,claim,high,Fact: Lisbon marathon doesn't follow the 2nd rule,,,,claim,high
+t1_19redyrdlklc1,comment,chatter,low,"Sarcastic one-liner; 'it' is unspecified, so no clear statement about running",chatter,medium,"Rule 3: sarcastic joke (""Everyone's lying to you""); no sincere point",chatter,medium
+t1_pfhjnxc,comment,claim,high,"Training advice (skip speed work, build endurance) with no firsthand account",,,,claim,high
+t3_1x5bak4,post,question,high,Title asks readers; body asks 'Any thoughts on why?'. Question rule applies first,,,,question,high
+t1_nxv56kv,comment,claim,high,General facts about point-to-point marathon logistics and shuttles,,,,claim,high
+t3_1s3n54p,post,claim,medium,"Title is a news statement; 'Did they get it right?' is an opinion poll, not own-situation help",question,medium,"Rule 1: asking opinion counts; ""Did they get it right?"" is the post's only own content",question,medium
+t1_goctoe4,comment,chatter,medium,"Complaint about LetsRun forum commenters; forum talk, says nothing about running itself",chatter,medium,"Complaint about LetsRun forum commenters; talk about forums, not running",chatter,medium
+t1_phx5oua,comment,chatter,medium,"Congratulations; 'so fast' is a compliment, not a general statement about running",chatter,high,Congratulations and compliment; nothing general about running,chatter,high
+t3_m3glfk,post,firsthand,medium,"'When I first began running my back ached within the first minute' (body part, first run)",firsthand,medium,"Rule 1: title imperative tells. Rule 2: ""When I first began running my back ached within the first minute""",firsthand,medium
+t1_pgwowp1,comment,firsthand,medium,'Coming off of Queensboro' is the writer's own NYC marathon moment at a named place,firsthand,medium,"Rule 2: named place on own race: ""Coming off of Queensboro""",firsthand,medium
+t1_o40es5i,comment,claim,medium,General temperature preference; no particular run or occasion,claim,medium,"Temperature preference, not a training number or particular run",claim,medium
+t1_goc8lc2,comment,chatter,medium,About a subreddit post/thread still being posted daily,chatter,high,About a subreddit thread being posted daily; talk about Reddit,chatter,high
+t3_1rm2k8g,post,question,high,Title asks for tips on moving from half to full marathon,,,,question,high
+t1_o3ylj4i,comment,claim,medium,General habit/opinion about rest days; no specific occasion,claim,medium,"Rule 3: sincere statement about own rest-day habit; no number, so not firsthand",claim,medium
+t1_oc3gnq9,comment,claim,medium,"Describes habitual easy pace but no time, distance or date; rule says claim",claim,medium,"Rule 2: habitual conversational pace, no number or occasion",claim,medium
+t1_pgwnrg3,comment,firsthand,high,"'after running London this year'; ran Chicago, London, Paris (named races)",,,,firsthand,high
+t3_1x5z5t6,post,question,high,Title asks readers how to know when to stop chasing a PR,,,,question,high
+t1_phwykpq,comment,claim,high,Asserts treadmill calibration facts and incline advice,,,,claim,high
+t1_pfg8ein,comment,claim,high,Beginner advice; friend's beta blockers is someone else's evidence,,,,claim,high
+t1_p39xjsp,comment,chatter,low,"Joke parodying zone 2 advice; not a sincere statement, but could be read as claim",chatter,medium,Rule 3: joke parodying zone 2 advice; not sincere,chatter,medium
+t1_19retggio3iv4,comment,firsthand,medium,'I ran the full at this race years ago': a particular race and distance,firsthand,medium,"Rule 2: named race and distance: ""I ran the full at this race years ago""",firsthand,medium
+t1_nyd7uj4,comment,claim,medium,Recommends an Economist article on marathon training,claim,high,Rule 3: recommends an article on marathon training,claim,high
+t1_p3cc7x1,comment,firsthand,medium,'I'm only running 30km/week right now': current training block with distance,firsthand,high,"Rule 2: habitual training with number: ""I'm only running 30km/week right now""",firsthand,high
+t1_p39locw,comment,chatter,high,Joke acronym; nothing about running,,,,chatter,high
+t1_oc19spd,comment,firsthand,medium,"'went from 3 mile runs to 10 mile runs', 'running for a year', squat 350 lbs",firsthand,high,"Rule 2: own training with numbers: ""went from 3 mile runs to 10 mile runs""",firsthand,high
+t1_goc5gll,comment,chatter,high,Agreement plus comparison to r/RunningCirclejerk; subreddit talk,,,,chatter,high
+t3_om5ii1,post,firsthand,high,'dragging myself along at 15 min/mi at the end of my LSD today',,,,firsthand,high
+t1_pgwjpi5,comment,claim,low,Describes race conditions 'this year' but never says the writer ran; could be spectator,claim,medium,"Rule 2: spectating not own running; race-conditions statement (""great spectator weather"")",claim,medium
+t1_phx0ez2,comment,claim,low,Shoe purchase intent implies gear opinion; might be chatter,claim,low,"Rule 3: names gear sincerely, not in a joke, but asserts only purchase intent",claim,low
+t1_pgw9faw,comment,firsthand,medium,'I've run New York twice'; also ran Philadelphia and San Diego (named races),firsthand,high,"Rule 2: named races: ""I've run New York twice"", ""after running for four-plus hours""",firsthand,high
+t3_1wrosne,post,question,high,Title asks which of Garmin or Strava predictions is more accurate,,,,question,high
+t1_nxwfzii,comment,firsthand,low,"'New Years Day 5k', '2.95 miles vs 3.1': writer's own race as director, not their running",claim,high,Rule 2: organising a race isn't own running; asserts course errors happen to race producers,claim,high
+t1_goc4soj,comment,chatter,high,Rhetorical question about Reddit,,,,chatter,high
+t1_pgwdbmb,comment,claim,high,"Opinion about whether majors are worth it; races named as examples, not run",,,,claim,high
+t3_idyine,post,firsthand,high,'training for a marathon when COVID hit'; 'an hour and a half running every day',,,,firsthand,high
+t3_imswws,post,firsthand,medium,"'typical, non-strenuous, flat 5-mile run in 70-degree weather'; title imperative is a warning, not a request",firsthand,high,"Rule 1: title imperative warns. Rule 2: ""typical, non-strenuous, flat 5-mile run in 70-degree weather""",firsthand,high
+t3_1p0ltz3,post,question,high,Title/body ask which Black Friday gear deals readers want,,,,question,high
+t3_6bn4kt,post,claim,medium,"Headline asserting a fitness study finding; fitness, not strictly running",claim,medium,Headline asserting a fitness study finding; no own account,claim,medium
+t1_nyco77e,comment,claim,high,General opinion on risk vs reward for runners,,,,claim,high
+t1_19refvtqj2res,comment,claim,medium,Jokey but asserts a course is scenic (opinion about a race),claim,medium,Rule 3: jokey but sincere opinion that the course is scenic,claim,medium
+t1_p39p5fi,comment,chatter,low,Quotes nutrition remarks others make; the writer asserts nothing about running,chatter,medium,Rule 3: quotes others' nutrition remarks with no point of the writer's own,chatter,medium
+t1_ph0zhk2,comment,claim,high,'something you have to do at least once' is an opinion/recommendation,,,,claim,high
+t3_1oztzqr,post,question,high,Title asks the bare minimum of strength training,,,,question,high
+t1_oh14a96,comment,claim,high,Fact about Boston course being one-way,,,,claim,high
+t1_o3x4b1q,comment,claim,medium,Wry general opinion about listening to body cues; no occasion,claim,medium,Wry opinion about listening to body cues; no occasion,claim,medium
+t1_o3y6h1t,comment,firsthand,medium,"'quit gym ... over injuries, mostly my hip'; now runs through that hip pain",firsthand,high,"Rule 2: named body part that keeps hurting: ""mostly my hip"", now runs through it",firsthand,high
+t3_p1lkek,post,claim,medium,"General cold-vs-heat preference; 'Anyone else' is an invitation, not a request",claim,low,"Rule 1 unclear: ""Anyone else prefer the cold?"" invites agreement; post is mainly asserted preference",claim,low
+t1_19re9qbmv7iv9,comment,claim,low,Remark about the race bridge plus congrats; unclear whether the writer ran it,claim,low,"Rule 3: race remark plus congrats; unclear writer ran, so not firsthand",claim,low
+t1_nyht2m4,comment,claim,high,Link plus general fact about ultra long runs,,,,claim,high
+t3_1gk7atl,post,claim,high,News of an influencer's DQ; someone else's running,,,,claim,high
+t1_p39wkxb,comment,chatter,medium,Joke ending 'wrong sub'; Gu named inside a subreddit joke,chatter,high,"Rule 3: naming Gu inside a ""wrong sub"" joke",chatter,high
+t3_1oq1ev4,post,firsthand,high,"NYC Marathon race report: 'Time: 3:37:39', mile splits",,,,firsthand,high
+t1_pgx6nnj,comment,claim,medium,Generic feelings at big events; 'so many months of training' is not a specific occasion,claim,medium,"Rule 2: ""so many months of training"" has no number or particular occasion",claim,medium
+t1_nxuobcz,comment,claim,high,Asserts Boston is a downhill marathon,,,,claim,high
+t3_lpmsss,post,claim,low,"Mostly subreddit talk, but 'Every runner is on their own path' is a statement about runners",claim,medium,"Rule 3: mostly subreddit talk, but sincere ""Every runner is on their own path""",claim,medium
+t1_pgwifse,comment,firsthand,medium,'I BQd' and ran a major marathon; named qualifier ties it to a race,firsthand,medium,"Rule 2: own race: ""I BQd"" and ran a marathon major",firsthand,medium
+t3_fp9ox4,post,claim,high,News claim about Chicago restricting runs,,,,claim,high
+t1_nxueq7d,comment,claim,high,Fact about Edinburgh's net elevation drop,,,,claim,high
+t1_oc1lkdz,comment,claim,high,General assertion about joints and knee replacements,,,,claim,high
+t1_p39awuw,comment,firsthand,low,'I regularly run 60km a week'; mainly a story about a mother-in-law's comments,firsthand,medium,"Rule 2: habitual training with number: ""I regularly run 60km a week""",firsthand,medium
+t1_p39bm6w,comment,chatter,low,Quotes a remark others make to runners; the writer asserts nothing,chatter,medium,Rule 3: quotes a remark made to runners with no point of own,chatter,medium
+t3_1u77xay,post,claim,medium,"Track etiquette rules; 'last week' incident involved other runners, not the writer's running",claim,medium,"Rule 1: title imperative tells. ""Last week"" incident is others' running; etiquette rules",claim,medium
+t3_1q4i8fz,post,question,high,Title asks why marathon courses follow the rule,,,,question,high
+t3_1wrx1i9,post,claim,high,News of Assefa's Berlin result; someone else's running,,,,claim,high
+t1_o3x02g1,comment,firsthand,medium,'rehab an IT band issue that wouldn't go away' (body part injured),firsthand,medium,"Rule 2: named body part: ""rehab an IT band issue that wouldn't go away""",firsthand,medium
+t3_1x6kc5h,post,question,high,Title asks whether a Major is worth it,,,,question,high
+t1_nxvzlzi,comment,claim,medium,Fact about Loch Ness hill at miles 17-19; writer's own run not stated,claim,medium,"Course fact: ""250ft / 70m in barely 2 miles from mile 17-19""; own run not stated",claim,medium
+t3_1q41mgm,post,question,high,Title asks readers how they tell pain types apart,,,,question,high
+t1_oh11ac8,comment,claim,high,Fact that Loch Ness is one-way and a BQ course,,,,claim,high

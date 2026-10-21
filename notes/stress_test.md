@@ -35,3 +35,22 @@ first-draft rules worked only when read generously.
 account (post 3) makes a post `firsthand`. That keeps the rule mechanical, at
 the cost of some mostly-advice posts landing in `firsthand`. If the model
 confuses `firsthand` and `claim` in unit 6, look here first.
+
+## Round 2: what pre-labelling 280 real posts exposed
+
+Four Claude sessions pre-labelled 70 posts each under the rules above, then
+reported their hardest calls. They split on four things:
+
+| Question | How the sessions split | Ruling now in the README |
+|---|---|---|
+| Habitual own training ("usually run 26", "60 km a week") | One session said `claim` (no single occasion); others said `firsthand` | `firsthand`: regular training with a number counts as a training block |
+| Asking for an opinion outside a title ("Did they get it right?") | One said `claim` (rule 1 listed only help/info); definition said opinions count | `question`: rule 1 now matches the definition |
+| Imperative titles that tell rather than ask ("Please learn about…", "Acknowledge Fat Runners") | Treated as `question` by a literal reading, otherwise not | Not `question`; only requests for an answer count |
+| "Yesterday" / "a couple days ago" as the date detail | Counted by one session, untested by others | Counts as a particular occasion |
+
+Also settled: organising, coaching or spectating isn't the writer's own
+running, and jokes or quoted remarks with no sincere point are `chatter`. The
+moderators' scheduled threads ("Super Moronic Monday", "Miscellaneous Monday
+Chit Chat") are boilerplate and were removed from the pool.
+
+The 115 low- and medium-confidence pre-labels were then re-checked against these rulings.

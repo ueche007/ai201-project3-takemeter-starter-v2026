@@ -39,10 +39,14 @@
 
 ## What This Does
 
-<!-- Your community, and what your classifier sorts posts into. Three or four
-     sentences. -->
-
-
+TakeMeter sorts posts and comments from **r/running**, Reddit's general running
+community, by what they give a reader. A post either asks the community
+something (`question`), reports the writer's own running with a concrete
+detail (`firsthand`), tells readers what to do or what's true about running
+without that firsthand evidence (`claim`), or says nothing about running at all
+(`chatter`). It's a fine-tuned DistilBERT model trained on hand-checked
+labels for real r/running posts. The useful split for a reader is `firsthand`
+vs `claim`: two posts can give the same advice, and only one shows where it came from.
 
 ---
 
@@ -139,21 +143,38 @@ The post above is `firsthand`: first marathon at 41, 40–60 km weeks, a week to
 **The other rules, applied in this order** (the order settles the boundaries
 that aren't the hardest):
 
-1. **`question` first.** A post whose title asks or requests something from
-   readers is `question`, imperatives included ("Recommend me a daily trainer…").
-   It stays `question` even if the body is a long personal account. Anything
-   else, including any comment, is `question` only if it asks for help with
-   the writer's own situation, or for specific information or recommendations.
-   These don't count as asking:
+1. **`question` first.** A post whose title asks readers for an answer is
+   `question`. That includes imperative requests ("Recommend me a daily
+   trainer…", "Lend me your tales"), but not imperatives that tell readers
+   something ("Please don't take for granted…", "Go for it"). It stays
+   `question` even if the body is a long personal account. Anything else,
+   including any comment, is `question` if asking readers for help,
+   information, recommendations or opinions is the point of it. A closing
+   "any tips for my situation?" counts. These don't count as asking:
    - a rhetorical question;
    - a question the writer answers themselves;
-   - a closing invitation to share ("Anyone else…?") after a complete report.
-2. **`firsthand` vs `claim`**: the rule above.
-3. **`claim` vs `chatter`.** If any sentence says something about running,
-   races, gear or runners (a recommendation, a fact, an opinion), it is not
-   `chatter`. "Congrats!! The back half of a marathon in the heat is a
-   different race" is `claim`. Merely naming gear or a race inside a joke
-   about the subreddit is still `chatter`.
+   - a closing invitation to share stories ("Anyone else…?") after a complete report.
+2. **`firsthand` vs `claim`**: the rule above. A "particular occasion" also
+   covers:
+   - the writer's own regular training with a number on it ("50–80 mpw", "I
+     usually run 26 before race day");
+   - a relative date ("yesterday", "last fall");
+   - a named body part that keeps getting hurt.
+
+   Organising, coaching, pacing for or watching someone else's race is not the
+   writer's own running.
+3. **`claim` vs `chatter`.** If any sentence sincerely says something about
+   running, races, gear or runners (a recommendation, a fact, an opinion), it
+   is not `chatter`. "Congrats!! The back half of a marathon in the heat is a
+   different race" is `claim`. These are still `chatter`:
+   - merely naming gear or a race inside a joke;
+   - a joke;
+   - quoting what someone else said, with no point of the writer's own.
+
+These rulings on how-to-apply were added after pre-labelling showed four
+places where the first version was read two ways (see
+[notes/stress_test.md](notes/stress_test.md)). The four labels and their
+definitions did not change.
 
 **How the rules were tested:** before labelling, an AI wrote 8 posts aimed at
 these boundaries and a separate AI session labelled them blind from the
@@ -168,48 +189,96 @@ is in [notes/stress_test.md](notes/stress_test.md).
 
 ## The Dataset
 
-<!-- Where you collected from, how you labelled, your counts, and three hard
-     cases. -->
+**Where the posts came from:** Public posts and comments from
+[r/running](https://www.reddit.com/r/running/), collected on 2026-10-20 from
+Reddit's public RSS feeds. The JSON API now needs a login. The feeds used were:
+- top posts of all time, of the year and of the month;
+- hot and new posts;
+- the latest comments;
+- the full comment threads of eight discussion posts (e.g. "Is it worth doing
+  a Major Marathon?", "Should a beginner ditch speed training?", "Why do marathon
+  training plans almost never suggest running 26 before race day?").
 
-**Where the posts came from:**
+`tools/fetch_rss.py` downloads the feeds slowly, because Reddit rate-limits
+hard. `tools/build_pool.py` turns them into a 938-item pool (227 submissions,
+711 comments): it strips HTML, drops usernames, bot and moderator boilerplate,
+and deleted posts, and removes duplicates. Posts are kept whole. For a
+submission, the first line is its title.
 
-**How I labelled them:** <!-- Cold first? Pre-labelled with AI and corrected?
-Say so plainly — the disclosure is required, not penalised. -->
+**How I labelled them:** `labels.csv` has 220 rows, built by
+`tools/assemble_labels.py`:
+- **20 cold rows** (`note` starts `cold`): drawn at random from the pool, kept
+  apart from everything below, and labelled by hand from the definitions alone,
+  before any pre-labels were seen.
+- **200 pre-labelled rows**: Claude pre-labelled 280 random pool items (100
+  submissions, 180 comments, with short comments over-sampled so `chatter`
+  wasn't starved). The 112 uncertain ones were re-checked after the rules were
+  clarified (Label Taxonomy, rules 1–3). 16 were still low-confidence, nearly
+  all because their label depended on a parent comment or thread the text
+  doesn't contain; those were left out rather than guessed. From the rest, 200
+  were sampled at random within each label to balance the counts. I then read
+  and corrected every one with `tools/review.py`. <!-- TODO: true only once the review
+  is finished; check `python tools/check_labels.py` says 0 left. -->
 
-**Counts per label:**
+Every row's `note` ends with its Reddit id, which links to its permalink in
+`data/candidate_posts.csv`. Both pre-label passes and their reasons are in
+`notes/prelabels.csv`.
+
+**Counts per label:** <!-- TODO: re-run `python tools/check_labels.py` after
+the cold labels and the review are done, and paste the final counts here. The
+table below is the 200 pre-labelled rows before review. -->
 
 | Label | Count | Share |
 |---|---|---|
-|  |  |  |
-|  |  |  |
-|  |  |  |
-| **Total** |  | 100% |
+| `question` | 50 | 25.0% |
+| `firsthand` | 52 | 26.0% |
+| `claim` | 53 | 26.5% |
+| `chatter` | 45 | 22.5% |
+| *cold rows, not yet labelled* | 20 | — |
+| **Total** | 220 | 100% |
 
 **Three hard cases**
 
-<!-- Any post that made you pause: what it was, which two labels it could have
-     been, and what you chose. These are worth more than the easy 190. -->
-
 **1.**
-> *The post:*
+> *The post:* "Running with my daughter". A report: a 5 km run yesterday,
+> with a seven-year-old on a scooter. It ends: "I'm hoping that we can keep
+> this going so if anyone has other tips for running with kids let me know."
 >
-> *Could have been:*
+> *Could have been:* `firsthand` (a complete report with a date and a
+> distance) or `question` (it asks for tips).
 >
-> *I chose, because:*
+> *I chose, because:* `question`. Rule 1 comes before rule 2, and a closing
+> request for help with the writer's own situation counts as asking. A closing
+> "Anyone else…?" that only invites stories would not. It was the closest call
+> in the set, because the post reads like a report, but the order of the rules
+> is there to stop the reading-like-a-report judgement deciding it.
 
 **2.**
-> *The post:*
+> *The post:* "Energy was off the charts this year. It was unseasonably warm,
+> but that made for great spectator weather." (a comment in the "Is it worth
+> doing a Major Marathon?" thread)
 >
-> *Could have been:*
+> *Could have been:* `firsthand` (a particular race, this year, described from
+> experience) or `claim`.
 >
-> *I chose, because:*
+> *I chose, because:* `claim`. Nothing in the text says the writer ran, and
+> "great spectator weather" suggests they watched. Watching someone else's race
+> isn't the writer's own running, so there's no firsthand account, just a
+> statement about the race.
 
 **3.**
-> *The post:*
+> *The post:* a news post about World Athletics giving USATF extra
+> half-marathon spots after three athletes were led off course, with the
+> writer's only addition being "Did they get it right?"
 >
-> *Could have been:*
+> *Could have been:* `claim` (the post is mostly reported fact about a race)
+> or `question`.
 >
-> *I chose, because:*
+> *I chose, because:* `question`. The title is a statement, so it fell to
+> the body rule. Asking readers for their opinion counts as asking, and that
+> question is the only thing the writer adds. The first draft of rule 1
+> listed only help and information, and one pre-label pass called this `claim`.
+> That disagreement is why rule 1 now names opinions.
 
 ---
 
@@ -217,11 +286,22 @@ Say so plainly — the disclosure is required, not penalised. -->
 
 <!-- Your starting model, your settings, and anything you changed and why. -->
 
-**Base model:**
+**Base model:** `distilbert-base-uncased` (the notebook's default), fine-tuned
+for sequence classification with 4 output labels.
 
-**Settings:** <!-- epochs, learning rate, batch size, seed -->
+**Settings:** 3 epochs, learning rate 2e-5, batch size 16, max length 128
+tokens, seed 42. 70/15/15 stratified split.
 
-**Anything I changed from the defaults, and why:**
+**Device:** `mps` (Apple Silicon GPU, torch 2.14.1). A practice run of the
+notebook on the 60-post practice set took about 2 minutes end to end on this machine.
+
+**Anything I changed from the defaults, and why:** Nothing. One known cost
+of keeping `MAX_LENGTH = 128`: r/running submissions are long (median 981
+characters, roughly 240 tokens), so the model only sees the first part
+of most submissions. Comments (median 243 characters) mostly fit. For a
+`firsthand` post whose only specific detail comes late, or a race report whose
+request is in the last line, the deciding text can be cut off. That's a likely
+unit 6 diagnosis, noted here before any results.
 
 **Split sizes:** <!-- train / val / test, and per-label counts in the test
 split. If a label had fewer than about 8 in test, say so — it explains a lot
@@ -240,19 +320,48 @@ of next unit's variance. -->
      workflow and disclosing it costs you nothing. Not disclosing it is the
      problem. -->
 
-**Moment 1**
+I used Claude (Claude Code, Opus 5.5) heavily in this unit. What it did:
+- wrote the collection scripts in `tools/`;
+- drafted the Milestone 1 distinctions, the taxonomy and the decision rules;
+- ran the boundary stress test;
+- drafted the five criteria in `criteria.md`;
+- pre-labelled the dataset.
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+**The criteria in `criteria.md` were drafted by Claude at my request.** The
+brief asks students to write these themselves, and I'm saying so plainly
+rather than presenting them as mine. They were committed before any training on
+my data (commit `fb8efed`).
 
-**Moment 2**
+**Moment 1: stress-testing the taxonomy**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* One Claude session wrote 8 r/running-style posts aimed at
+  the label boundaries. A separate session labelled them blind, from the definitions only.
+- *What came back:* It agreed with the intended label on all 8, but only one
+  call was high-confidence. It pointed out that rule 1 missed requests phrased as
+  commands ("Recommend me a trainer…"), and that the rules were silent on
+  details from someone else's running.
+- *What I changed:* `question` became "asks or requests". A closing "Anyone
+  else…?" after a report stopped counting as asking. Someone else's running
+  and bare counts like "two marathons" stopped counting as firsthand detail
+  ([notes/stress_test.md](notes/stress_test.md)).
 
-**Pre-labelling disclosure:**
+**Moment 2: pre-labelling showed the rules were read two ways**
+
+- *What I asked for:* Four Claude sessions each pre-labelled 70 posts and
+  reported their hardest calls.
+- *What came back:* They disagreed on four things:
+  - habitual training ("I usually run 26") as firsthand;
+  - asking for an opinion as a question;
+  - imperative titles;
+  - "yesterday" as a date.
+- *What I changed:* I wrote a ruling for each into rules 1–3 and had the 112
+  low- and medium-confidence pre-labels re-checked against them.
+
+**Pre-labelling disclosure:** The 20 rows marked `cold` were labelled by hand,
+with no AI help and before seeing any pre-labels. Every other row was
+pre-labelled by Claude and then read and corrected by me. Each such row's
+`note` column says which. <!-- TODO before submitting: confirm the review
+happened, and give the number of labels you changed in review. -->
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 
