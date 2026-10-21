@@ -54,33 +54,113 @@
      The decision rule is worth a point on its own and it's the thing most
      people leave out. Every taxonomy has a hardest boundary. Name yours. -->
 
-### `label_one`
+Four labels, sorted by what a post gives the reader: a request, the writer's
+own evidence, a general assertion, or nothing about running. The same
+definitions are in [label_definitions.txt](label_definitions.txt) for the baseline.
 
-**Definition:**
+### `question`
 
-**Example 1:**
->
-
-**Example 2:**
->
-
-### `label_two`
-
-**Definition:**
+**Definition:** The writer asks or requests something from readers (advice,
+information, a recommendation or an opinion), and getting answers is the
+reason for the post.
 
 **Example 1:**
->
+> Where do you put your keys and phone that's NOT a FlipBelt?
+> How do you all carry stuff when running? I've been using a FlipBelt for a few years but I don't find it comfortable as I can never get it to stop riding up, so I'm looking at other options. I've been thinking about getting a vest but the furthest I currently run is half marathon distance, so I'm not sure it's warranted.
 
 **Example 2:**
->
+> Insatiable appetite since I started running?
+> Hi all! I (27F) am training for a half-marathon despite never really running before. […] Training has gone well so far, but I am SO hungry all the time. […]
+> What should I be doing to curve this appetite? I feel like I'm out-eating whatever weight I would be losing from running lol
+
+### `firsthand`
+
+**Definition:** The writer reports something that happened in their own
+running (a race, a run, a training block, an injury, or what happened when
+they tried something) with at least one specific detail tying it to a
+particular occasion.
+
+**Example 1:**
+> Guilty of this. Ran through shin splints for 3 weeks last fall because I was training for my first half marathon and didn't want to "lose progress". Ended up needing 6 weeks off instead of the 1-2 I would have needed if I'd just listened to my body from the start. Now I treat rest days like they're part of the training, not a break from it.
+
+**Example 2:**
+> Despite mocking and negativity from my family I just ran my first ever 5k
+> Last year I started going to the gym here and there but didn't really commit, and a few months ago I struggled to run for even a few minutes. About a month ago I really started sticking to running at least 2 or 3 times a week with some cross training, and with some real progress I've finally reached my goal of 5k, without stopping, and made it in 28 minutes! […]
+
+### `claim`
+
+**Definition:** The writer tells readers what to do, or states what is true
+about running, races, gear or runners, without a firsthand account of their
+own behind it.
+
+**Example 1:**
+> My guess is it's more about fairness and record keeping than romance. Straight downhill point to point races would be chaos.
+> The history is cool but governing bodies really care about comparability.
+
+**Example 2:**
+> I concur. Unless you have a specific performance goal, i.e. beating you PB on a given distance, or a specific time in a race, then no need for speed training. Unless this is what motivates you to keep on running, then it's a different thing.
+
+### `chatter`
+
+**Definition:** Social talk that says nothing about running: agreement,
+thanks, congratulations, jokes, or talk about Reddit and the subreddit.
+
+**Example 1:**
+> Exactly! The dopamine effect from getting up voted!
+> BTW, I up voted your comment
+
+**Example 2:**
+> Lol how do you get downvoted for such an obvious statement
 
 ### The hardest boundary
 
-**Which two labels:**
+**Which two labels:** `firsthand` vs `claim`. On r/running the most common
+substantial comment is a personal story that turns into advice. This one, from
+a thread on recovering after a marathon, sits right on the line:
 
-**The decision rule I used every time:**
-<!-- e.g. "If the post names a specific checkable fact, it's `analysis`, even
-     if the tone is heated." -->
+> I ran my first maraton at 41. Trained 3-4 days per week (40-60 km) and it took my 1 week to recover. You will feel horrible after but the next day, get out and walk 5-10 km and so on (swim or bike is likely fine as well). The important thing is to get the blow flowing to help healing the body.
+
+Half of it is the writer's own marathon and half is instructions to the reader.
+
+**The decision rule I used every time:** If the post contains a firsthand
+account of the writer's **own** running with at least one specific detail of
+a particular occasion (a time or pace, the distance of a particular run, a
+date or month, a named race or place, or a body part that got hurt), it is
+`firsthand`, even if it also gives advice or a general opinion. Without that
+detail it is `claim`. These don't count as a specific detail:
+- vague appeals like "in my experience", "this worked for me" or "took me
+  years to learn";
+- bare counts like "two marathons";
+- details of someone else's running (a spouse, a friend, a pro). Those are
+  evidence offered for a claim, not a firsthand account.
+
+The post above is `firsthand`: first marathon at 41, 40–60 km weeks, a week to recover.
+
+**The other rules, applied in this order** (the order settles the boundaries
+that aren't the hardest):
+
+1. **`question` first.** A post whose title asks or requests something from
+   readers is `question`, imperatives included ("Recommend me a daily trainer…").
+   It stays `question` even if the body is a long personal account. Anything
+   else, including any comment, is `question` only if it asks for help with
+   the writer's own situation, or for specific information or recommendations.
+   These don't count as asking:
+   - a rhetorical question;
+   - a question the writer answers themselves;
+   - a closing invitation to share ("Anyone else…?") after a complete report.
+2. **`firsthand` vs `claim`**: the rule above.
+3. **`claim` vs `chatter`.** If any sentence says something about running,
+   races, gear or runners (a recommendation, a fact, an opinion), it is not
+   `chatter`. "Congrats!! The back half of a marathon in the heat is a
+   different race" is `claim`. Merely naming gear or a race inside a joke
+   about the subreddit is still `chatter`.
+
+**How the rules were tested:** before labelling, an AI wrote 8 posts aimed at
+these boundaries and a separate AI session labelled them blind from the
+definitions. It matched the intended label on all 8, but only one call was
+high-confidence. Its notes produced the "requests count", "closing invitation",
+"someone else's running" and "naming gear in a joke" clauses above. The record
+is in [notes/stress_test.md](notes/stress_test.md).
 
 
 

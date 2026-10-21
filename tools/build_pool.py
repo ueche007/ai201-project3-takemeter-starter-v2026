@@ -3,8 +3,8 @@
     python tools/build_pool.py data/raw_rss data/candidate_posts.csv
 
 Each row is one post or comment: id, kind, permalink, published, text.
-Usernames are dropped. Bot posts, deleted/removed text and duplicates are
-skipped. The text is kept whole; it is not trimmed to fit the model.
+Usernames are dropped (including the "submitted by /u/x" line on link posts).
+Bot posts and removal notices, deleted/removed text and duplicates are skipped. The text is kept whole; it is not trimmed to fit the model.
 
 This is the pool posts are picked from. It is NOT labels.csv.
 """
@@ -34,7 +34,15 @@ def html_to_text(raw):
     s = re.sub(r"[ \t]+", " ", s)
     s = "\n".join(line.strip() for line in s.split("\n"))
     s = re.sub(r"\n\s*\n+", "\n", s)
+    # Link posts have no SC_ON marker, so strip their "submitted by /u/x [link] [comments]".
+    s = re.sub(r"\s*submitted by\s+/u/\S+.*$", "", s, flags=re.S)
+    s = re.sub(r"\bu/[A-Za-z0-9_-]+", "u/[user]", s)   # mentions of other users
     return s.strip()
+
+
+def is_bot(text):
+    t = text.lower()
+    return "this is a bot message" in t or "automatically removed by" in t
 
 
 def rows_from(path):
@@ -56,7 +64,7 @@ def rows_from(path):
             text = f"{title}\n{body}".strip() if body else title
         else:
             text = body
-        if len(text) < MIN_CHARS:
+        if len(text) < MIN_CHARS or is_bot(text):
             continue
         yield {"id": eid, "kind": kind, "permalink": permalink,
                "published": (published or "")[:10], "text": text}
