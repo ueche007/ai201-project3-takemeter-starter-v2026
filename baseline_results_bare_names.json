@@ -1,0 +1,205 @@
+{
+  "model": "facebook/bart-large-mnli",
+  "n": 33,
+  "seed": 42,
+  "held_out": true,
+  "used_definitions": false,
+  "scores": {
+    "n": 33,
+    "accuracy": 0.6060606060606061,
+    "f1_macro": 0.5932539682539683,
+    "per_label": {
+      "chatter": {
+        "precision": 1.0,
+        "recall": 0.2857142857142857,
+        "f1": 0.4444444444444445,
+        "support": 7
+      },
+      "claim": {
+        "precision": 0.4,
+        "recall": 0.6666666666666666,
+        "f1": 0.5,
+        "support": 9
+      },
+      "firsthand": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "support": 8
+      },
+      "question": {
+        "precision": 0.6666666666666666,
+        "recall": 0.8888888888888888,
+        "f1": 0.761904761904762,
+        "support": 9
+      }
+    }
+  },
+  "predictions": [
+    {
+      "text": "My 1st marathon complete!!\nRace Information\n- Name: Madison Marathon\n- Date: November 9, 2025\n- Distance: 26.2 miles\n- Location: Madison, WI\n- Net Time: 4:52:14\n- Moving Time: 4:49:52\nGoals\nGoal Description Completed? A Finish marathon Yes B Don't get injured Yes C Sub 5 Yes Splits\nMile Time 1 11:11 2 10:57 3 10:57 4 10:52 5 11:05 6 10:54 7 10:52 8 10:54 9 11:02 10 10:39 11 10:44 12 11:02 13 11:00 14 11:25 15 11:02 16 11:08 17 11:11 18 11:16 19 11:13 20 11:22 21 11:08 22 11:16 23 11:02 24 11:16 25 11:08 26 10:41 Training\nI used the NRC app's marathon plan. I had previously used it for C25K a long time back, then slightly more recently for the 10k plan, then half marathon. I then followed the marathon plan until around the 30k run which I failed 3 times due to improper preparation and weather, then went back to the half marathon plan to run my 2nd half. After that I used the marathon plan.\nTypically I ran 5x/week, with 4x/week lifting (2ish leg days), and 1x/week hockey. I tried my best to prioritize going slower than my best (unlike in previous race trainings), and there were several times I was running on tired legs. I tried to avoid leg days and running on the same day, I did my shortest runs on my hockey days, and I stopped lifting/hockey the week before.\nPre-race\nMy family came in from far away to support me, and we had a nice pasta dinner and I carb loaded a lot during the week prior. Raceday, I had the same breakfast I always do (greek yogurt+granola+frozen fruit+protein powder) plus a granola bar, prepared my running vest, then got driven to the race.\nI got there about 20 minutes early and it was freezing. It was snowing and super windy. I bought an oversized hoodie and some gloves from Goodwill the day prior in preparation for this, but I was cold even before I shed the hoodie. I lined up next to the 5hr pacer and queued up my music playlist.\nRace\nIt started at 7am on the dot. After about 50m I shed my hoodie, and I unexpectedly kept my gloves for the entire race (hands were frozen for about half of it). I felt really good, in my training my slow/far pace was typically 11:30-12:00, but my legs weren't tired so I felt good enough to stay around 11:00 for basically the entire race.\nThe atmosphere was incredible. At first it snowed, but eventually it stopped and got taken over by falling leaves. People were all smiles and super happy (at least before mile 18ish) and there were tons of spectators cheering us on despite the cold. I got to stop and pet a dog by a person with a Free pets! sign, and one person I took an apple slice from. Along the way, I passed up a couple beer opportunities, also some gummy candies and muffins.\nI realized pretty quickly into this race that there was a kink in my water vest because the tube was bent awkwardly, and I didn't want to stop and fix it (especially with the cold), so I just ran with a vest full of water the entire time. I has two water bottles which lasted me most of the race anyways. My GU gels were much thicker than I was used to because of the cold, but the real challenge was getting them open. (Fun fact, I might be the only one but I really like the taste of gels.)\nI had 3 bathroom breaks, pretty evenly spaced out, and had to wait for two of them. That's probably my biggest future time save haha.\nI didn't start feeling soreness (in my achilles) until about halfway really, and it only kinda started ramping up around 17ish. I didn't really feel like I hit a wall in particular. Earlier in my training I did a 20 miler (my longest run) starting with really sore legs (I went pretty slow), so I was kind of used to it but better prepared. Mentally it was kinda hard a little past halfway (I was kinda bored) and mile 20ish. Knowing I was close but still had an hour to go was rough, and I constantly kept checking my watch hoping to be almost done.\nI got passed by a lot of 10kers and half marathoners who started 20min later than me. But after the first half, I had a lot of space. 11:00min/mi is a weird pace because it's kinda in between 5:00:00 and 4:45:00 so I guess not many people were aiming for it. I didn't struggle with any hills, so I passed many hill walkers throughout.\nOn the final hill (toward the end of mile 25), I maintained my pace, then sped up a bit, then I saw the finish line and sprinted the last part somehow. I think the baked potato bar was calling me and gave me extra strength.\nPost-race\nI was super happy with my finish and training results. My hands were too cold to eat the food, which actually helped because it prevented me from devouring too much food too fast. My family had only been able to spot me a couple times throughout because my tracking app was inaccurate, but they all helped me recover at the end.\nI kind of have recovered pretty quickly and don't feel as sore as I expected. The training 20mi I literally collapsed on the ground after, which goes to show how important it is to train on tired legs.\nShoutout to the Clifton Hoka 10s for unexpectedly not being horrible shoes this race. I really haven't liked them, and the laces haven't been holding together after not much time, but my shoes never got untied from their double knot. I still probably won't be buying more cliftons, even though I loved the 9s.\nAt the beginning of the race, my biggest motivation was seeing all of the work and dedication and discipline and sacrifice of the past few months come to fruition. Around halfway, it changed to making my loved ones proud, and showing that their support meant I could complete something really challenging and meaningful to me. By the end, it was for the baked potato bar. I told my gf this, and she said she was a bit disappointed but understood. I told her I felt bad, but it also was a really good baked potato.\nThanks for reading :) Feel free to ama!\nMade with a new race report generator created by /u/[user].",
+      "gold": "firsthand",
+      "predicted": "firsthand"
+    },
+    {
+      "text": "Wow! Just curious what does an 80-100 mile week look like?",
+      "gold": "question",
+      "predicted": "question"
+    },
+    {
+      "text": "Cheers.\nI was a professional coach for 9 years, I trained 2 college athletes and hundreds of regular people.\nFrom a program and nutrition standpoint, the regular people were all far too anxious and worried about min/maxing everything.\nRelax, listen to your body and remember this is a lifestyle, train to live rather than live to train.\nIMHO obviously.",
+      "gold": "claim",
+      "predicted": "claim"
+    },
+    {
+      "text": "Is it just me or have races gotten worse?\nI feel like races prices haven\u2019t skyrocketed in recent years, but it seems to me in terms of swag, nutrition, and post race goodies have gotten much worse recently. I run mostly marathons in Utah and Idaho. And they range from 90-150 and I just feel like they don\u2019t always provide much other than the shirt. Not to say that isn\u2019t enough, but I ran a half marathon around 15 years ago and the end of the race was like a buffet of goodies to eat. Anyone else think races are cutting the goodies you get too? Any thoughts on why? I know like shrinkflation is a thing but are there other things I might not be thinking of?",
+      "gold": "question",
+      "predicted": "question"
+    },
+    {
+      "text": "I did a half iron w the tide and finish 15 mins faster than expected! I thought my watch had paused or something when I got out of the water",
+      "gold": "firsthand",
+      "predicted": "claim"
+    },
+    {
+      "text": "What has been the most embarrassing thing that\u2019s happened to you while running?\nLast night I ran on a trail section at a local park where I had by far the most embarrassing moment of my long running career several years ago. So I was reminded of that moment and honestly wanted to read about your embarrassing moments so I don\u2019t feel quite so bad.\nMine was just at a local park. It has a crushed gravel trail around a lake, and during the week, especially in the mornings it is very remote and sparsely used. You can often see wildlife, and it\u2019s nice to just put on your headphones and chuck away some miles. Well it was on one of these mornings where I was lost in a song, and found myself a little gassy. Well.... I was all alone in a remote park, so I passed gas over a number of strides and IMMEDIATELY was passed by an entire high school cross country team that was apparently out training, and they all had emphatic comments like.... \u201csweet\u201d, \u201cthat was impressive\u201d, \u201ctaco Tuesday?\u201d, etc.\nSigh.",
+      "gold": "question",
+      "predicted": "question"
+    },
+    {
+      "text": "So much damage. You micro tear a lot of your body in a marathon and it takes weeks to recover. You definitely don't want to be doing that in training.",
+      "gold": "claim",
+      "predicted": "question"
+    },
+    {
+      "text": "Haha. The 21 comes from that being roughly the number of almonds in a 1-oz serving.\nMy mom used to always say this too, and I only found out later in life where the number came from. Fun fact I'm allergic to almonds and my mom used to say \"It's just such a shame he can't have his 21 almonds a day. What am I supposed to replace it with?\" Hahahaha. Good time.",
+      "gold": "chatter",
+      "predicted": "claim"
+    },
+    {
+      "text": "Do you see rest as failure? (aka why do people not rest when they're injured?)\nI have so many friends who run through niggles that then become injuries. And then they run through those because in their minds, they can't justify rest. Especially with the whole \"no days off\", I'm trying to figure out why someone would rather break their body, instead of stopping a randomly imposed streak.",
+      "gold": "question",
+      "predicted": "question"
+    },
+    {
+      "text": "What\u2019s one piece of advice you wish you\u2019d known as a new runner?\nFor those of you who\u2019ve been running a while, what\u2019s the one thing you wish someone had told you when you first started?\nCould be training, mindset, gear, pacing, anything really.\nFigured it might be helpful for newer runners reading as well.",
+      "gold": "question",
+      "predicted": "question"
+    },
+    {
+      "text": "I did NYC twice and it was an amazing experience. The energy, the people I met, and the feeling of accomplishment was something I will always cherish.",
+      "gold": "firsthand",
+      "predicted": "claim"
+    },
+    {
+      "text": "I definitely wanted to run 26mi before my first marathon and don't regret it. It was very slow, but it was a mental relief to know I could absolutely do it. Did it again for the 2nd, but not the 3rd and 4th. My best time was my first for what that is worth.",
+      "gold": "firsthand",
+      "predicted": "claim"
+    },
+    {
+      "text": "Hit by a truck on my morning run. Lucky to still be here. Please be smarter than me and be safe. Your life can be taken away in a matter of seconds.\nLast Thursday I put on my running shoes for an easy 10 mile recovery run. I was especially tired that morning as I was coming off another high mileage week and I wasn\u2019t getting great sleep as a result of a stressful work week.\nI left my house and prepared to cross the only major intersection on my typical route. As I looked to my right I saw a steady line of traffic on the other side of the road. I looked to my left and didn\u2019t see any incoming cars. It was still dark out as it was just before 6 AM. As I waited for the last car to pass from the line of cars I entered the intersection. I then heard a loud screech and looked to my left and saw big bright headlights. I tried to retract back to the sidewalk but did not make it in time.\nThe truck swerved and hit me with the front end of his bumper. The collision sent me rolling and skidding on the asphalt. I got up quickly and made my back to the sidewalk. I stood on the sidewalk hunched over trying to figure out mentally what had just happened. I was in complete shock, however, I was. not unconscious or disoriented. Once I recollected myself, all I could think about was all gear (watch, hat, phone) laying in the street about to get run over. The driver of the vehicle got out to ask if I I was okay and told me he called the cops.\nIt seemed like hours but the cops finally showed up. They told me to walk about 500 feet to sit down on a bench so I could give distance between myself and the driver and wait for an ambulance. This was a terrible idea. Up until that point I hadn\u2019t moved an inch and stood like a statue hunched over. The hip pain was unbearable and my foot was a bloody mess but somehow the adrenaline got my legs to move and I made my way to the bench. The ambulance arrived and I was rushed to the hospital.\nI received x rays and a CT scan. Outside of some lacerations and road rash I had 1 broken toe and a bruised hip bone. My foot did get ripped up pretty bad as you can see in the link below and my Boston\u2019s were shredded in half. My body was bruised and swollen but I did not have any serious or life threatening injuries.\nWhen I say I\u2019m lucky to be alive I do not say that lightly. The driver was going 50 in a 45 and driving a Ford F-350. Had the driver not swerved upon seeing me enter the intersection he would have hit me head on and most likely killed me. In that split second he reacted and saved my life.\nNow on to the embarrassing things I am ashamed to admit. I didn\u2019t wear reflective gear that morning. Actually my clothes were dark. I did not thoroughly check both sides before crossing. I did not get enough sleep the night before and as a result started my run groggy and seemingly half asleep. All of these poor decisions compounded into what could have been a fatal mistake. As a result I would have left behind my wife, my three year old son and a three month old baby.\nBeing that close to death shook me to my core. I haven\u2019t slept well since leaving the hospital. I close my eyes and see the headlights coming at me. I know we all hear these stories and think \u201coh that dumb runner or cyclist!\u201d It\u2019s almost as if it makes us feel better thinking of them as dumb so we can rationalize us being smarter than that and never making these mistakes. But now I AM the dumb runner who made the mistake that could have cost me my life.\nMy plea in all this is to just be smart. Wear reflective gear, get good sleep so you can be sharp mentally, avoid listening to music with cars around and always look both ways. I feel like I get a second chance at life again so I want to share this to help people not make the same mistakes I made. As for now I will be recovering and preparing myself for the day I will once again hit the roads. Pictures of my accident are below (blood alert) and a link to my activity of the run on Strava. Stay safe!\nhttps://imgur.com/a/MCzqHtn\nhttps://www.strava.com/activities/4198082080",
+      "gold": "firsthand",
+      "predicted": "firsthand"
+    },
+    {
+      "text": "The internet provides us with a means to filter out what we don't want to see very easily, whether it be blocking something or taking the tiny amount of effort required to scroll away from content you don't want to see. I know this is an unpopular opinion thread but the solution here is ridiculously easy and in the scope of things this post barely qualifies as a bellyache. I'm with this comment all the way.",
+      "gold": "chatter",
+      "predicted": "claim"
+    },
+    {
+      "text": "Why do marathon courses have to follow this rule?\nTwo rules for the design of an official road running race course are that (1) any net drop in elevation from the start to finish must be less than .1% of the course distance (so, less than 42.195 metres for a marathon) and (2) the total direct distance between the start and the finish must be less than half the course distance. This means the start and finish of a marathon must be no more than 26.1 kms apart.\nI understand the purpose of the first rule is to prevent courses with excessive downhill lengths, but what's the point of the second rule?\nThe historic origin of the marathon was a messenger having to run from Marathon to Athens. A marathon should be all about starting in one place and finishing in another, having seen some sights in between.\nSo why have this rule which seems so counter to the original spirit of a marathon? Why is it so important to have the start and finish points within 26k of each other?\nAny road race course designers have any thoughts or experiences to share in relation to this?",
+      "gold": "question",
+      "predicted": "question"
+    },
+    {
+      "text": "Lol right, It\u2019s the gels causing heart attacks, couldn\u2019t be the high intensity cardiovascular activity",
+      "gold": "claim",
+      "predicted": "claim"
+    },
+    {
+      "text": "the second rule is basically why on short track stuff, youre only to run a worldrecord under a certain wind-threshold, because you basically mostly run in 1 direction so you get all the benefit with none of the loss.",
+      "gold": "claim",
+      "predicted": "claim"
+    },
+    {
+      "text": "Did my first run back after a week off with a cold, 5k at an easy pace and it felt better than I expected. Keeping it slow this week to ease back in.",
+      "gold": "firsthand",
+      "predicted": "claim"
+    },
+    {
+      "text": "Thank you. The race I'm thinking of the course map is marked as run against traffic but nothing specific about running on the shoulder while other sections said to run in the sidewalk. I now take it that it wasn't just an FYI to expect cars but that the course would have been measured on the shoulder. Some of those roads were low traffic residential so it wouldn't have been a huge issue to run the tangent but if you did you probably would have cut a few feet of the course then.",
+      "gold": "claim",
+      "predicted": "question"
+    },
+    {
+      "text": "Thick Girl Runner Rant\nFirst things first, I (29F) am 5'5\" and about 170 lbs. Large boobs, wide hips, and I got some stomach on me. Overall, I look pretty proportional though. Hourglass, just a little wider. Wear a Large or a size 12 in most women's clothes. (Just trying to paint the picture here lol)\nI also eat very healthy. Fresh foods only, everything home-cooked, never frozen processed foods, etc. Mostly veggies because I love veggies.\nThis is the body I was given. My weight doesn't really fluctuate. I don't gain weight easily, nor do I lose it easily. I've been a thick girl since puberty and because I run often and eat healthy, it doesn't seem like that will never change, which is fine with me.\nI've been running for many years, somewhat inconsistently. I might be consistent for 2 years before falling out of my routine for a few months. Get back into the groove again and something eventually throws me off my game again. Throughout all this, I still consider myself a RUNNER. I love the sport and even if I'm out of a weekly routine, I still try to find time to run here and there. 3 miles minimum.\nBecause of the above things, people never really expect me to be a runner. My body type doesn't fit the runner mold. I don't post every run and race on instagram, which as everyone knows, is what truly makes it real *eyeroll*. (No shade to people who do post all of their runs and races! My problem is only the people who think if you DON'T post, then it didn't happen).\nMy fastest 5k was at an 8:02 (min/mile) pace. I am aware that this isn't SUPER fast, but it's fast enough that I've placed in my age group in all of the 5Ks I've ever done. I'm from a pretty small area so many of the 5Ks were fairly small, maybe only a couple hundred people attend. I'm aware that in bigger cities, I would probably have a little more trouble placing. But regardless, I still think an 8:00 to 8:30 5k pace is something to be proud of.\nAnyways, my complaint is this. Since my body doesn't fit everyone's vision of what a runner should look like, people love to assume I'm slow or new to running. Or people think I'm lying when I mention that I got 1st, 2nd, or 3rd in my age group at whatever 5k. If they don't make an actual comment about it, I can sometimes even see it in their eyes that they're skeptical.\nEven worse, people who don't realize I've been running for most of my life sometimes put their foot in their mouth by saying something along the lines of \"have you started running to lose weight?\" ...No, why? Should I be losing weight? I think I look pretty damn fine, if you ask me.\nAfter moving to a new city, I decided to join a running group. The town I lived in previously didn't have such groups. I showed up to my first group run and met everybody. As we waited for everyone else to show up, a girl from the group said to me \"I'm in recovery mode, I'll be running slow so I can run with you.\" I just politely smiled, although I was quite offended. What exactly makes this person, whom I met 3 minutes ago, think I plan on running \"slow\"? What makes her think that her \"recovery\" pace is equal to my comfortable pace? I chalked it up as since it was my first time joining the group, maybe she assumed it was my first time running? I don't know- but I still think about that little comment sometimes.\nI am not negative towards my body. I have a great figure that I love, but it's still upsetting to know that people make assumptions on what I can and can't do physically, which should not be the case. Weight and health do not ALWAYS go hand-in-hand.\n\u200b\nAny other runners on the thicker side experience this kind of judgement? How do you deal with it?\nThin-framed runners or even non-runners, do you find yourself judging others in this way? Be honest, I would love to hear multiple opinions!\n\u200b\n\u200b\nEdit: Pace is in minutes per mile. I'm new to reddit and forget I'm interacting with people from all over the world.\nAlso, this was not meant to be a post for weight loss tips. The unsolicited advice in the comments proves further the assumptions people make.\n\u200b",
+      "gold": "question",
+      "predicted": "claim"
+    },
+    {
+      "text": "Wow girl you are so fast!!! Congratulations!",
+      "gold": "chatter",
+      "predicted": "claim"
+    },
+    {
+      "text": "How are they accomplishing this? Even at a brisk 3 hour marathon pace, that would be 6 hours a day just running - and that doesn't take into account any warming up, cooling down, hydrating or fueling.\nRunning 50 miles a day would effectively be their full time job.",
+      "gold": "claim",
+      "predicted": "question"
+    },
+    {
+      "text": "First official half marathon (2:28:40)\nHi everyone,\nI just saw a few post like these and wanted to share my journey. I hope to keep running and improve (my health, form, times and distances).\nRace Information\nName: Servus Calgary Marathon (Centaur Subaru 21.1KM)\nDate: May 24, 2026\nDistance: 21.1 km\nLocation: Calgary, AB\nShoes: New Balance 1080 v14\nTime: ~ 2:29:00\nAverage Heart Rate: 144 bpm\nMax Heart Rate: 171 bpm\nGoals\n| Goal | Description | Completed? |\n| 1 | Keep things easy for first 5K | Yes |\n| 2 | Steadily increase pace | Yes |\n| 3 | Get as close to 2:30 as possible | Yes |\nTraining\nI\u2019m a guy in my early 40s who started running in 2024. I ran my first official 5K in May of that year (~33:15).\nShortly after this, we got pregnant and welcomed our baby in early 2025. While I continued to run until December 2025, I stopped from January to April 2025. From April 2025 to December, I got back into running and increased my distance each month. Over the winter, I bundled up and got into winter running (as long as it was warmer than -20 Celsius) and continued to increase my distance. In March of this year, I started to do two runs a week. At the start of May, I tried a solo practice half marathon and clocked a 2:32:40. I spent the rest of May reducing my distance per run. The week before the half marathon, I did 2 easy 3km runs and hit the YMCA hot tub.\nTraining Log\nMay 2024\nCalgary Marathon 5K\nSummer/Autumn 2024\nJune: ~18km total, long runs around 5km\nJuly: ~24km total, long runs reaching 6.5km\nAugust: ~29km total, long runs reaching 8.9km\nSeptember: ~34km total, long runs reaching 10km\nOctober: ~49km total, long runs reaching 12.7km\nNovember: ~80km total (biggest month), long runs reaching 16km\nWinter 2024-2025\nSwitched to indoors runming over winter. But did not do that many runs.\nEarly 2025\nTook time off running after the arrival of a new baby. No runs from January through April 2025.\nMid-2025\nMay 2025: 1 run, 5.5km\nJune 2025: 1 run, 4km\nJuly 2025: 5 runs, ~27km total, longest run 6.6km\nAugust 2025: 5 runs, ~28km total, longest run 6km\nFall 2025\nSeptember 2025: 6 runs, ~31km total, longest run 6km\nOctober 2025: 3 runs, ~17km total, longest run 8km (had a 2.5 week vacation).\nNovember 2025: 6 runs, ~56km total, long runs reaching 11-13km\nWinter 2025-2026\nDecember 2025: 2 runs, ~8km total\nJanuary 2026: 5 runs, ~50km total, long runs reaching 14km\nFebruary 2026: 4 runs, ~46km total, long runs reaching 16km\nMarch-April 2026\nMarch 2026: 3 runs, ~33km total, long runs reaching 15km\nApril 2026: 5 runs, ~56km total, long runs reached 18km\nMay 2026\nRan 21.13km on 2 May as a practice long run. Time was 2:32:36. I set up a pitstop at my car and would stop 4 times for water.\nContinued with 14km and 12.7km the following weekend.\nPre-race\nMy race morning started at 4:00 AM. I drank some warm water with salt and maple syrup, had toast with PB and a black iced coffee (my usual), walked the dog (a short one), used the toilet (warm water helped), got dressed, and left. It was cool, so I had a windbreaker on. Jogged to the train station and caught the train at 5:34 AM. Tried to relax on the train and listened to my favourite comedy podcast (Stop Podcasting Yourself). Around 5:45 AM, I ate a banana. Got off the train around 6:20 AM, hit the washrooms, did a light 1km warmup jog, and did some stretching.\nWhile lining up in the corrals, I found the 2:30 pacer. My goal was to start behind her and try to catch up near the end of the race. When the race started I quickly lost sight of her.\nRace\nFor the first few kilometers, the run felt significantly less enjoyable than my solo runs along the quiet river park pathways. Also, I knew I was starting slow, but it was disheartening watching waves of people pass me early on. I had to repeatedly tell myself to relax and just run. My pace was a all over the place as I got used to the new experience. My first 5k was ~38:20.\nBy KM 3, things picked up and I started to enjoy the atmosphere. During a hillly section with a turnaround (around KM 5 - 7), it was great high-fiving runners on both sides as I went up and came down.\nMy second 5k was ~36:30\nBy KM 12, my legs felt pretty good and I could feel myself speed up.\nMy third 5k was ~33:40\nAround KM 15, just before a loop turnaround, I spotted the 2:30 pacer for the first time since the start. She was running on the opposite side of the road and seemed quite far ahead. My initial thought was that there was no way I could catch her. But with only 6k left, I wanted to try.\nI sped up and started to close the gap. Between KM 16 and KM 20, I had a ~31:40 time for that 5K stretch and an average pace of ~6:20 min/km.\nBy KM 18, I caught up to the pacer and I stayed in sync with her for a bit. As we hit a downhill section, I took the speed boost and kept a steady pace on the uphill. I passed her and kept running.\nAt KM 19, I turned off the metronome I listen to on my phone and switched over to some fast, upbeat music and just ran to the beat.\nWhen I hit the 700m sign, I started to go as fast as I could but it was a bit too early and had to tap the brakes for about 100 meters.\nAt 300m out, I could see the finish line and I again ran as fast as I could. I crossed the finish ~2:29:00.\nPost-race\nI was completely empty after crossing the finish line. I picked up my medal and walked straight to the water and electrolytes.\nI had planned to walk back to the train and head home. However, I suddenly heard someone calling my name. I turned around and saw my wife had managed to make it to the finish line with our 14-month-old daughter :) Because of my daughter's morning nap schedule, we really didn't think she would be able to coordinate the timing.\nSeeing them standing there was hands down the absolute best part of the entire day. My wife ran the 10K event the day before, and our next big milestone is training together for her first half marathon.\nAfter a celebratory recovery stop at A&W for a burger, a zero-sugar root beer, and a blue Powerade, I got home for a hot shower and a solid 1-hour nap. I felt like 70% better by the afternoon (just some stiff knees) and went for a walk with my wife, daughter and dog. Ended up doing 46K steps for the day.\nLooking back on this entire experience, I enjoyed it so much. From the quiet training runs along the river to preparing for the race. In hindsight, I could have prepped a bit harder or done an proper training program but I feel like I can do that for my next one. I feel a lot healthier and better overall. I am hooked on runnining and my plan is to keep running 2 to 3 times a week. I want to do another half marathon this fall (either an official race or a solo time trial). Also I will train with my wife for her first half next spring.\nThank you for reading my story.",
+      "gold": "firsthand",
+      "predicted": "firsthand"
+    },
+    {
+      "text": "Working out makes joints and tendons stronger, yeah. But you need muscle to protect against injuries so you're not doing more damage.",
+      "gold": "claim",
+      "predicted": "claim"
+    },
+    {
+      "text": "It has indeed turned into a \u201ccheck out my arm balance\u201d sub. I\u2019m guilty of it sometimes too, but I\u2019ve decided to just document my yoga sequences on strava and post a pic from my routine in there.",
+      "gold": "chatter",
+      "predicted": "chatter"
+    },
+    {
+      "text": "I feel like you talked out of both ends of your mouth here. OP says there are too many and they shouldn't be allowed. You say please report them. I say I do but most stay up. You say well the rules allow us to keep some in certain cases. My estimates are that you keep up more than half of what I report.\nMaybe you guys should be removing more of them. Instead of if something \"might\" lead to discussion, it should be \"did it already/will it definitely lead to interesting discussion?\"",
+      "gold": "chatter",
+      "predicted": "chatter"
+    },
+    {
+      "text": "I don't get this sub at all really. I get that there are all these rules for where you should post certain discussions, but the front page of the sub is usually still a bunch of posts that appear to go against the rules.\nI couple of mine have been removed and advised to repost in a megathread and I just don't bother. It's just a lottery wether a mod decides to scrap your post or not.",
+      "gold": "chatter",
+      "predicted": "question"
+    },
+    {
+      "text": "\u201cIf I keep my body moving, and my mind occupied at all times, I will avoid falling into a bottomless pit of despair\u201d - Chris Traeger.\nThis quote was funny when I was in my 30s. It hits a lot harder in my 40s.",
+      "gold": "chatter",
+      "predicted": "claim"
+    },
+    {
+      "text": "how do you mentally approach slower training paces\ni know running slow has benefits but mentally it still feels unproductive sometimes. how did you reframe slower paces so they felt purposeful instead of like wasted effort?",
+      "gold": "question",
+      "predicted": "question"
+    },
+    {
+      "text": "Energy was off the charts this year. It was unseasonably warm, but that made for great spectator weather.",
+      "gold": "claim",
+      "predicted": "claim"
+    },
+    {
+      "text": "Running advice - fuelling, running in morning vs. evening (beginner)\nI have been a casual runner for a while now and I\u2019ve run a half marathon race, which was relatively unsuccessful but I did it. I am now training for a marathon.\nI\u2019ve noticed that when I run in the afternoon/ evening, my runs feel so much better and I have a lot more energy - presumably this is because I have spent the day eating my meals and storing energy as I sit at my office desk. When I run in the morning, I struggle way more with my runs despite always ensuring that I eat something and drink sufficient water before I go.\nI\u2019d appreciate some advice on fuelling properly/ anything else that might help make my morning runs feel a little easier. Any tips?",
+      "gold": "question",
+      "predicted": "question"
+    },
+    {
+      "text": "I ran Chicago as my first\u2026it was absolutely amazing and I\u2019m a very slow runner (5.5h). It was about the experience, not my time.",
+      "gold": "firsthand",
+      "predicted": "firsthand"
+    },
+    {
+      "text": "The Economist just ran an article on training for marathons. A good read. You may want to check it out.",
+      "gold": "claim",
+      "predicted": "claim"
+    }
+  ]
+}
