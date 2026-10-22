@@ -435,11 +435,15 @@ The same baseline run with **bare label names** instead of the definitions
 <!-- Milestone 1 asks you to write this BEFORE seeing the trained numbers. A
      prediction made afterwards isn't one. -->
 
+I predicted that I would get 80% correct.
+
 **What the gap actually means:**
 <!-- If the baseline matched your trained model, your fine-tuning added
      nothing — and that is a real finding, not a failure. Say it plainly. -->
 
-
+The trained model beat the zero-shot baseline, the baseline scored 0.273, against 0.364 for the trained model.
+With bare label names, the baseline scored 0.606, so before the fix the trained model lost to it.
+After the fix, seed 42 scored 0.788.
 
 ---
 
@@ -486,7 +490,7 @@ Seed 42, before the improvement (notebook section 7):
      direction. "7 real analysis posts were called hot_take and only 3 went the
      other way" is a direction, not just an error rate. -->
 
-
+6 real firsthand posts were predicted question, and none went the other way. The model guessed question for 26 of 33 posts.
 
 ---
 
@@ -514,7 +518,33 @@ Seed 42, before the improvement (notebook section 7):
      have that can tell a LABELLING problem from a MODEL problem, and this
      section is graded on whether you used it that way. -->
 
+My agreement with staff was 27/30 (90%). On its own, that doesn't settle
+whether the misses came from my labels or from the model; both are still
+possible.
 
+Diagnoses: one per miss (criteria 1, 2 and 5 were missed before the fix):
+- training loss stayed near chance (about 1.29, against 1.386);
+- accuracy swung 27 points across seeds;
+- chatter was never predicted;
+- agreed with staff on 27 of 30
+
+The agreement report alone doesn't settle it, but the before/after comparison
+does. Between the two runs only the training length changed, from 3 epochs to
+10, and the labels were identical. So I put all three misses down to the model.
+
+- **Criterion 1 (accuracy ≥ 0.65 on every seed): the model.** Before the fix,
+  training loss stayed near chance (about 1.29, against 1.386), and the model
+  guessed `question` for 26 of 33 posts. After 10 epochs on the same labels,
+  accuracy went up on seeds 42 and 7 (0.788, 0.636). It is still below 0.65 on
+  seeds 7 and 2024 (0.636, 0.606), so this one is still missed.
+- **Criterion 2 (every label's F1 ≥ 0.45): the model.** Before the fix,
+  `chatter` F1 was 0.000 on every seed because the model never predicted
+  `chatter`. After 10 epochs on the same labels, `chatter` F1 is
+  0.833 / 0.800 / 0.500, and the criterion is met.
+- **Criterion 5 (confidence gap ≥ 0.15): the model.** Before the fix, the
+  model's average confidence was about 0.30, barely above the 0.25 of guessing
+  among four labels. After 10 epochs on the same labels, the gaps are
+  +0.273 / +0.273 / +0.455, and the criterion is met.
 
 ---
 
@@ -548,25 +578,39 @@ Seed 42, before the improvement (notebook section 7):
      written rule two different ways on 30 posts, that is direct evidence about
      what you did across your own 200. -->
 
-**1.**
-> *The post:*
+**1. sp_007**
+> *The post:* "Ran the same loop in 4C and in 24C within a fortnight, same effort by heart rate. 90 seconds slower in the heat over six miles. People keep saying heat costs you 'a bit' and it's more than that."
 >
-> *Staff said / I said:*
+> *Staff said / I said:* `analysis` / `hot_take`
 >
-> *My call, and why:*
+> *My call, and why:* Staff is right. The number drives the conclusion: being 90 seconds slower over six miles is the reason the writer says heat costs more than "a bit". Under rule 1, the fact carries the argument, so it's `analysis`.
 >
-> *Which pile:*
+> *Which pile:* (a). The rule covered it and I applied it loosely.
 
-**2.**
-> *The post:*
+**2. sp_010**
+> *The post:* "Three of us ran the same session on the same day, different shoes, within 10 seconds of each other over 5 miles. I'm not saying shoes do nothing, but whatever they do was smaller than the noise between three people."
 >
-> *Staff said / I said:*
+> *Staff said / I said:* `analysis` / `hot_take`
 >
-> *My call, and why:*
+> *My call, and why:* Staff is right. The number drives the conclusion: "within 10 seconds over 5 miles" is the evidence that whatever shoes do is smaller than the noise between runners. That makes it `analysis` under rule 1.
 >
-> *Which pile:*
+> *Which pile:* (a)
+
+**3. sp_019**
+> *The post:* "Nobody actually enjoys the long run. They enjoy having done it, which is a completely different thing, and the sport would be more honest if it said so."
+>
+> *Staff said / I said:* `hot_take` / `reaction`
+>
+> *My call, and why:* The rules don't clearly settle this one. It reads as a
+> reflective general musing. Rule 2 separates a report of what just happened
+> to the writer from a general claim about the world, but it doesn't say where
+> a reflective musing like this belongs.
+>
+> *Which pile:* (b). The rules don't cover reflective general musings.
 
 **What the pattern in my disagreements tells me:**
+
+sp_007 and sp_010 are both `analysis` posts that also seem like hot takes.
 
 
 
@@ -579,7 +623,9 @@ only training setting that changed: same labels, split seeds, learning rate,
 batch size and max length. `RUN_LABEL` was switched to `"after"` only so the
 before file wasn't overwritten.
 
-**Which diagnosis pointed at it:**
+**Which diagnosis pointed at it:** The training loss stayed near chance
+(about 1.29, against 1.386 for random guessing) after 3 epochs, which pointed
+at an undertrained model, so I trained for longer.
 
 ### Run Log — After
 
@@ -618,6 +664,10 @@ Confusion matrix, seed 42, after:
 <!-- If it didn't, say so. Relabelling that didn't help is a genuinely
      interesting result and earns full credit. -->
 
+Yes. With the 10-epoch fix, accuracy went from 0.364 / 0.485 / 0.636 to
+0.788 / 0.636 / 0.606 (seeds 42 / 7 / 2024), and criteria 2 and 5 flipped
+from MISSED to MET.
+
 
 
 ---
@@ -626,12 +676,27 @@ Confusion matrix, seed 42, after:
 
 <!-- For each criterion still missed: what you'd do, and why you stopped. -->
 
+**Criterion 1 (accuracy ≥ 0.65 on every seed) is still missed:** 0.788 /
+0.636 / 0.606 after the fix. Next I would get more test data, starting from
+what I already know about why it's missed:
+- the test split is only 33 posts, so one post moves accuracy by about 0.03;
+- accuracy still swings 18 points across seeds;
+- 69% of submissions are cut off at 128 tokens, so the model never sees the end of most long posts.
 
+I stopped because I wanted to investigate why these results happened first,
+so that the next change is an evidence-based solution rather than a guess.
+The brief also allows only one improvement in this unit.
 
 **The gap between what I meant my labels to capture and what the model
 learned:**
 <!-- Two sentences. Your confusion matrix is the evidence. -->
 
+I meant `question` to capture posts whose point is asking readers for an
+answer, but in the seed 42 run after the fix, 3 real `question` posts were
+predicted `claim` and none went the other way. The model keyed in on the loose
+application of the rule, so I need to define the rule better for this case.
+Both causes are at work: the misses before the fix came from the model, and
+this leftover `question` → `claim` confusion comes from how the rule is defined.
 
 
 <!-- ═════════════════════════════════════════════════════════════════════
