@@ -406,12 +406,30 @@ my data (commit `fb8efed`).
 <!-- Both models on the same posts. `python baseline.py --trained results.json`
      prints this table for you. -->
 
+Baseline: `facebook/bart-large-mnli`, zero-shot, prompted with
+`label_definitions.txt`. Trained: `results.json` (seed 42, unit 5 defaults).
+Both are scored on the same 33 posts in `test_split.csv`.
+
 | Measure | Baseline | Trained | Difference |
 |---|---|---|---|
-| Overall accuracy |  |  |  |
-| Macro F1 |  |  |  |
-| F1 — `label_one` |  |  |  |
-| F1 — `label_two` |  |  |  |
+| Overall accuracy | 0.273 | 0.364 | +0.091 |
+| Macro F1 | 0.182 | 0.282 | +0.100 |
+| F1 — `chatter` | 0.000 | 0.000 | +0.000 |
+| F1 — `claim` | 0.000 | 0.308 | +0.308 |
+| F1 — `firsthand` | 0.353 | 0.364 | +0.011 |
+| F1 — `question` | 0.375 | 0.457 | +0.082 |
+
+The same baseline run with **bare label names** instead of the definitions
+(`baseline_results_bare_names.json`, same 33 posts):
+
+| Measure | Baseline (definitions) | Baseline (bare names) | Trained (seed 42, before) | Trained (seed 42, after) |
+|---|---|---|---|---|
+| Overall accuracy | 0.273 | 0.606 | 0.364 | 0.788 |
+| Macro F1 | 0.182 | 0.593 | 0.282 | 0.788 |
+| F1 — `question` | 0.375 | 0.762 | 0.457 | 0.714 |
+| F1 — `firsthand` | 0.353 | 0.667 | 0.364 | 0.842 |
+| F1 — `claim` | 0.000 | 0.500 | 0.308 | 0.762 |
+| F1 — `chatter` | 0.000 | 0.444 | 0.000 | 0.833 |
 
 **What I predicted before I looked:**
 <!-- Milestone 1 asks you to write this BEFORE seeing the trained numbers. A
@@ -430,24 +448,38 @@ my data (commit `fb8efed`).
 <!-- Five criteria across three seeds. The notebook's section 6 prints the
      spread table; the Target and Verdict columns are yours. -->
 
+Unit 5 defaults (3 epochs, lr 2e-5, batch 16, max length 128), device `mps`,
+from `results_three_seeds_before.json`.
+
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1. Overall accuracy | ≥ 0.65 on every seed | 0.364 | 0.485 | 0.636 | MISSED |
+| 2. Lowest per-label F1 | ≥ 0.45 on every seed | 0.000 (`chatter`) | 0.000 (`chatter`) | 0.000 (`chatter`) | MISSED |
+| 3. Label shares in `labels.csv` | 12%–40% each | 21.4%–27.7% | (same file) | (same file) | MET |
+| 4. Agreement with staff | ≥ 21/30 | pending | — | — | pending |
+| 5. Confidence gap (most − least confident third) | ≥ 0.15 on every seed | +0.091 | −0.091 | +0.364 | MISSED |
+
+Spread across the three seeds (notebook section 6):
+
+| Measure | Seed 42 | Seed 7 | Seed 2024 | Spread |
+|---|---|---|---|---|
+| Overall accuracy | 0.364 | 0.485 | 0.636 | 0.273 |
+| Macro F1 | 0.282 | 0.362 | 0.538 | 0.255 |
+| F1 — `question` | 0.457 | 0.600 | 0.706 | 0.249 |
+| F1 — `firsthand` | 0.364 | 0.182 | 0.778 | 0.596 |
+| F1 — `claim` | 0.308 | 0.667 | 0.667 | 0.359 |
+| F1 — `chatter` | 0.000 | 0.000 | 0.000 | 0.000 |
 
 ### Confusion matrix
 
-<!-- ⚠️ TYPED AS A MARKDOWN TABLE. The notebook prints one ready to paste.
-     An image of a matrix earns nothing. -->
+Seed 42, before the improvement (notebook section 7):
 
-| true \ predicted |  |  |  |
-|---|---|---|---|
-| **** |  |  |  |
-| **** |  |  |  |
-| **** |  |  |  |
+| true \ predicted | question | firsthand | claim | chatter |
+|---|---|---|---|---|
+| **question** | 8 | 0 | 1 | 0 |
+| **firsthand** | 6 | 2 | 0 | 0 |
+| **claim** | 6 | 1 | 2 | 0 |
+| **chatter** | 6 | 0 | 1 | 0 |
 
 **My biggest off-diagonal number, and what it means:**
 <!-- Not "the model made mistakes" — WHICH boundary it didn't learn, and which
@@ -465,11 +497,11 @@ my data (commit `fb8efed`).
 
 | # | Criterion | Target | Verdict | How I decided |
 |---|---|---|---|---|
-| 1 |  |  |  |  |
-| 2 |  |  |  |  |
-| 3 |  |  |  |  |
-| 4 |  |  |  |  |
-| 5 |  |  |  |  |
+| 1 | Overall accuracy | ≥ 0.65 on all three seeds | MISSED | 0.364, 0.485, 0.636: all three below 0.65 |
+| 2 | Every label's F1 | ≥ 0.45 on all three seeds | MISSED | `chatter` F1 is 0.000 on every seed |
+| 3 | Label balance | each label 12%–40% of `labels.csv` | MET | 21.4%, 24.5%, 26.4%, 27.7% |
+| 4 | Agreement with staff | ≥ 21/30 | pending | needs `my_staff_labels.csv` and `data/staff_labels.csv` |
+| 5 | Confidence gap | ≥ 0.15 on all three seeds | MISSED | +0.091, −0.091, +0.364: two seeds below 0.15 |
 
 **Diagnoses**
 
@@ -542,19 +574,44 @@ my data (commit `fb8efed`).
 
 ## The Improvement
 
-**What I changed:**
+**What I changed:** `EPOCHS = 3` → `EPOCHS = 10` in the notebook. That's the
+only training setting that changed: same labels, split seeds, learning rate,
+batch size and max length. `RUN_LABEL` was switched to `"after"` only so the
+before file wasn't overwritten.
 
 **Which diagnosis pointed at it:**
 
 ### Run Log — After
 
+From `results_three_seeds_after.json` (10 epochs, device `mps`). Training
+loss at the last logged step: 0.654 / 0.734 / 0.610, against 1.284 / 1.313 /
+1.292 before.
+
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1. Overall accuracy | ≥ 0.65 on every seed | 0.788 | 0.636 | 0.606 | MISSED |
+| 2. Lowest per-label F1 | ≥ 0.45 on every seed | 0.714 (`question`) | 0.500 (`question`) | 0.500 (`chatter`) | MET |
+| 3. Label shares in `labels.csv` | 12%–40% each | 21.4%–27.7% | (same file) | (same file) | MET |
+| 4. Agreement with staff | ≥ 21/30 | pending | — | — | pending |
+| 5. Confidence gap | ≥ 0.15 on every seed | +0.273 | +0.273 | +0.455 | MET |
+
+| Measure | Seed 42 | Seed 7 | Seed 2024 | Spread |
+|---|---|---|---|---|
+| Overall accuracy | 0.788 | 0.636 | 0.606 | 0.182 |
+| Macro F1 | 0.788 | 0.646 | 0.608 | 0.180 |
+| F1 — `question` | 0.714 | 0.500 | 0.556 | 0.214 |
+| F1 — `firsthand` | 0.842 | 0.533 | 0.750 | 0.309 |
+| F1 — `claim` | 0.762 | 0.750 | 0.625 | 0.137 |
+| F1 — `chatter` | 0.833 | 0.800 | 0.500 | 0.333 |
+
+Confusion matrix, seed 42, after:
+
+| true \ predicted | question | firsthand | claim | chatter |
+|---|---|---|---|---|
+| **question** | 5 | 1 | 3 | 0 |
+| **firsthand** | 0 | 8 | 0 | 0 |
+| **claim** | 0 | 1 | 8 | 0 |
+| **chatter** | 0 | 1 | 1 | 5 |
 
 **Did it help, and how do I know:**
 
