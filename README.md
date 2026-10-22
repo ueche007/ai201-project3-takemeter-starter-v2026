@@ -435,7 +435,8 @@ The same baseline run with **bare label names** instead of the definitions
 <!-- Milestone 1 asks you to write this BEFORE seeing the trained numbers. A
      prediction made afterwards isn't one. -->
 
-I predicted that I would get 80% correct. I wrote this after I had already
+I predicted that I would get 80% correct, and that the trained model would
+beat the baseline on `firsthand` and `claim`. I wrote this after I had already
 seen the results, so it isn't a true prediction.
 
 **What the gap actually means:**
