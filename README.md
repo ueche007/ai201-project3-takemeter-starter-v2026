@@ -435,7 +435,8 @@ The same baseline run with **bare label names** instead of the definitions
 <!-- Milestone 1 asks you to write this BEFORE seeing the trained numbers. A
      prediction made afterwards isn't one. -->
 
-I predicted that I would get 80% correct.
+I predicted that I would get 80% correct. I wrote this after I had already
+seen the results, so it isn't a true prediction.
 
 **What the gap actually means:**
 <!-- If the baseline matched your trained model, your fine-tuning added
@@ -444,6 +445,12 @@ I predicted that I would get 80% correct.
 The trained model beat the zero-shot baseline, the baseline scored 0.273, against 0.364 for the trained model.
 With bare label names, the baseline scored 0.606, so before the fix the trained model lost to it.
 After the fix, seed 42 scored 0.788.
+
+What this means: before the fix, my fine-tuning added nothing. An untrained
+model given just the label names (0.606) beat my 3-epoch model (0.364). Only
+after training for 10 epochs did my model clearly beat both baselines, and
+that's shown on seed 42 only. Seeds 7 and 2024 after the fix (0.636, 0.606)
+are roughly level with the bare-names baseline.
 
 ---
 
@@ -491,6 +498,10 @@ Seed 42, before the improvement (notebook section 7):
      other way" is a direction, not just an error rate. -->
 
 6 real firsthand posts were predicted question, and none went the other way. The model guessed question for 26 of 33 posts.
+Because nearly every row ended up in the `question` column, this isn't one
+specific boundary the model failed to learn. The honest reading is that, at
+3 epochs, it hadn't learned any boundary yet and fell back on guessing
+`question`.
 
 ---
 
