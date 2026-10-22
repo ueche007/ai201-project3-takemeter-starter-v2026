@@ -456,7 +456,7 @@ from `results_three_seeds_before.json`.
 | 1. Overall accuracy | ≥ 0.65 on every seed | 0.364 | 0.485 | 0.636 | MISSED |
 | 2. Lowest per-label F1 | ≥ 0.45 on every seed | 0.000 (`chatter`) | 0.000 (`chatter`) | 0.000 (`chatter`) | MISSED |
 | 3. Label shares in `labels.csv` | 12%–40% each | 21.4%–27.7% | (same file) | (same file) | MET |
-| 4. Agreement with staff | ≥ 21/30 | pending | — | — | pending |
+| 4. Agreement with staff | ≥ 21/30 | 27/30 (one check, no seeds) | — | — | MET |
 | 5. Confidence gap (most − least confident third) | ≥ 0.15 on every seed | +0.091 | −0.091 | +0.364 | MISSED |
 
 Spread across the three seeds (notebook section 6):
@@ -500,7 +500,7 @@ Seed 42, before the improvement (notebook section 7):
 | 1 | Overall accuracy | ≥ 0.65 on all three seeds | MISSED | 0.364, 0.485, 0.636: all three below 0.65 |
 | 2 | Every label's F1 | ≥ 0.45 on all three seeds | MISSED | `chatter` F1 is 0.000 on every seed |
 | 3 | Label balance | each label 12%–40% of `labels.csv` | MET | 21.4%, 24.5%, 26.4%, 27.7% |
-| 4 | Agreement with staff | ≥ 21/30 | pending | needs `my_staff_labels.csv` and `data/staff_labels.csv` |
+| 4 | Agreement with staff | ≥ 21/30 | MET | 27 of 30 matched the staff labels (90%) |
 | 5 | Confidence gap | ≥ 0.15 on all three seeds | MISSED | +0.091, −0.091, +0.364: two seeds below 0.15 |
 
 **Diagnoses**
@@ -526,7 +526,7 @@ Seed 42, before the improvement (notebook section 7):
      data/staff_taxonomy.md, not your own — so every argument below is made
      from those definitions and those decision rules. -->
 
-**Agreement rate:** ___ / 30 = ___%
+**Agreement rate:** 27 / 30 = 90% (`agreement_results.json`)
 
 <!-- Nobody grades this number. A 60% who argues every disagreement from the
      stated rules beats a 95% who wrote "staff was right" nine times. Several
@@ -592,7 +592,7 @@ loss at the last logged step: 0.654 / 0.734 / 0.610, against 1.284 / 1.313 /
 | 1. Overall accuracy | ≥ 0.65 on every seed | 0.788 | 0.636 | 0.606 | MISSED |
 | 2. Lowest per-label F1 | ≥ 0.45 on every seed | 0.714 (`question`) | 0.500 (`question`) | 0.500 (`chatter`) | MET |
 | 3. Label shares in `labels.csv` | 12%–40% each | 21.4%–27.7% | (same file) | (same file) | MET |
-| 4. Agreement with staff | ≥ 21/30 | pending | — | — | pending |
+| 4. Agreement with staff | ≥ 21/30 | 27/30 (one check, no seeds) | — | — | MET |
 | 5. Confidence gap | ≥ 0.15 on every seed | +0.273 | +0.273 | +0.455 | MET |
 
 | Measure | Seed 42 | Seed 7 | Seed 2024 | Spread |
